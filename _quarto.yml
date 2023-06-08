@@ -47,6 +47,9 @@ website:
       - section: Other
         icon: question-circle-fill
         contents:
+          - text: Software
+            icon: download
+            href: software.qmd
           - text: License
             icon: award-fill
             href: LICENSE.qmd

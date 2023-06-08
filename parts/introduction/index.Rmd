@@ -2,7 +2,7 @@
 title: "Open Source Conjoint: Introduction"
 date: June 15, 2023
 author: "John Paul Helveston, Ph.D."
-institute: "Dept. of Engineering Management and Systems Engineering"
+institute: "Eng. Management & Systems Eng."
 output:
   xaringan::moon_reader:
     css:
@@ -78,7 +78,7 @@ class: middle, inverse
 .leftcol40[
 
 <center>
-<img src="images/topics.png" width=100%>
+<img src="https://jhelvy.github.io/2023-qux-conf-conjoint/images/logo.png" width=300>
 </center>
 
 ]
@@ -91,7 +91,6 @@ class: middle, inverse
 
 ]
 
-
 ---
 
 # .center[Target audience]
@@ -99,6 +98,8 @@ class: middle, inverse
 --
 
 ## You are familiar with:
+
+<br>
 
 ## - Conjoint analysis / discrete choice experiments
 
