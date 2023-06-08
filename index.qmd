@@ -1,23 +1,17 @@
 
-# Quant UX 2023 Workshop:<br>An Open Source Framework for<br>Choice Based Conjoint Experiments in R
-
-<hr>
-
 ::: {.grid}
 
 ::: {.g-col-3}
 
-<img src="images/logo.png" width="180">
+<img src="images/logo.png" width="200">
 
 :::
 
 ::: {.g-col-9}
 
-### John Paul Helveston
+# Quant UX 2023 Workshop:<br>An Open Source Framework for<br>Choice Based Conjoint Experiments in R
 
-### June 15, 2023
-
-### George Washington University
+John Paul Helveston<br>June 15, 2023<br>George Washington University
 
 :::
 
@@ -25,32 +19,56 @@
 
 <hr>
 
-# Part 1: [Introduction](parts/introduction.qmd)
+::: {.grid}
 
-In this section, we will address:
+::: {.g-col-6}
+
+### Part 1: [Introduction](parts/introduction.qmd)
+
+Introduction to an open source workflow for choice-based conjoint analysis:
 
 1. What is conjoint analysis?
-2. Why R?
-3. High-level overview of open source conjoint workflow.
+2. Why {{< fa rproject >}}
+3. High-level overview of open source workflow.
 
-# Part 2: [Designing surveys with {cbcTools}](parts/designing-surveys.qmd)
+:::
 
-In this section, we will discuss how to use the {{< var cbcTools >}} package to design and test choice-based conjoint surveys, including:
+::: {.g-col-6}
+
+### Part 2: [Designing surveys with {cbcTools}](parts/designing-surveys.qmd)
+
+How to use the {{< var cbcTools >}} package to design and test choice-based conjoint surveys:
 
 1. Design of experiment
 2. Simulating choices
 3. Assessing power
 
-# Part 3: [Estimating models with {logitr}](parts/estimating-models.qmd)
+:::
 
-In this section, we will discuss how to use the {{< var logitr >}} package to estimate logit models on simulated data, including:
+:::
+
+::: {.grid}
+
+::: {.g-col-6}
+
+### Part 3: [Estimating models with {logitr}](parts/estimating-models.qmd)
+
+How to use the {{< var logitr >}} package to estimate logit models on simulated data:
 
 1. Mixed logit models
 2. WTP space models
 
-# Part 4: [Fielding surveys with formr](parts/fielding-surveys.qmd)
+:::
 
-In this section, we will discuss how to use the {{< var formr >}} platform to field conjoint surveys online, including:
+::: {.g-col-6}
+
+### Part 4: [Fielding surveys with formr](parts/fielding-surveys.qmd)
+
+How to use the {{< var formr >}} platform to field conjoint surveys online:
 
 1. Using RMarkdown to design a survey
 2. Implementing a choice-based conjoint survey in formr
+
+:::
+
+:::

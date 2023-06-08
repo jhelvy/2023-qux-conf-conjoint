@@ -11,34 +11,48 @@
     "href": "index.html",
     "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
     "section": "",
-    "text": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R\n\n\n\n\n\n\n\nJohn Paul Helveston\n\n\nJune 15, 2023\n\n\nGeorge Washington University\n\n\n\n\n\n\nPart 1: Introduction\nIn this section, we will address:\n\nWhat is conjoint analysis?\nWhy R?\nHigh-level overview of open source conjoint workflow.\n\n\n\nPart 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power\n\n\n\nPart 3: Estimating models with {logitr}\nIn this section, we will discuss how to use the {logitr} package to estimate logit models on simulated data, including:\n\nMixed logit models\nWTP space models\n\n\n\nPart 4: Fielding surveys with formr\nIn this section, we will discuss how to use the formr platform to field conjoint surveys online, including:\n\nUsing RMarkdown to design a survey\nImplementing a choice-based conjoint survey in formr"
+    "text": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R\nJohn Paul HelvestonJune 15, 2023George Washington University\n\n\n\n\n\nPart 1: Introduction\nIntroduction to an open source workflow for choice-based conjoint analysis:\n\nWhat is conjoint analysis?\nWhy \nHigh-level overview of open source workflow.\n\n\n\nPart 2: Designing surveys with {cbcTools}\nHow to use the {cbcTools} package to design and test choice-based conjoint surveys:\n\nDesign of experiment\nSimulating choices\nAssessing power\n\n\n\n\n\nPart 3: Estimating models with {logitr}\nHow to use the {logitr} package to estimate logit models on simulated data:\n\nMixed logit models\nWTP space models\n\n\n\nPart 4: Fielding surveys with formr\nHow to use the formr platform to field conjoint surveys online:\n\nUsing RMarkdown to design a survey\nImplementing a choice-based conjoint survey in formr"
   },
   {
     "objectID": "parts/designing-surveys.html",
     "href": "parts/designing-surveys.html",
     "title": "Designing Surveys",
     "section": "",
-    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
   },
   {
     "objectID": "parts/estimating-models.html",
     "href": "parts/estimating-models.html",
     "title": "Estimating Models",
     "section": "",
-    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
   },
   {
     "objectID": "parts/fielding-surveys.html",
     "href": "parts/fielding-surveys.html",
     "title": "Fielding Surveys",
     "section": "",
-    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
   },
   {
     "objectID": "parts/introduction.html",
     "href": "parts/introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+    "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+  },
+  {
+    "objectID": "index.html#part-1-introduction",
+    "href": "index.html#part-1-introduction",
+    "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
+    "section": "Part 1: Introduction",
+    "text": "Part 1: Introduction\nIn this section, we will address:\n\nWhat is conjoint analysis?\nWhy R?\nHigh-level overview of open source conjoint workflow.\n\n\nPart 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power"
+  },
+  {
+    "objectID": "index.html#part-2-designing-surveys-with-cbctools",
+    "href": "index.html#part-2-designing-surveys-with-cbctools",
+    "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
+    "section": "Part 2: Designing surveys with {cbcTools}",
+    "text": "Part 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power"
   }
 ]

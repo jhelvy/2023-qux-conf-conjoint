@@ -8,8 +8,6 @@ path_slides <- file.path("parts", part, "index.html")
 path_pdf <- file.path("parts", part, glue::glue("{part}.pdf"))
 ```
 
-:::{.column-body-outset}
-
 ::: {.grid}
 
 ::: {.g-col-6}
@@ -20,9 +18,10 @@ path_pdf <- file.path("parts", part, glue::glue("{part}.pdf"))
 - Use <kbd>f</kbd> to toggle full screen.
 - Use <kbd>o</kbd> to view an overview of all slides.
 - Use <kbd>h</kbd> to see a list of other shortcuts.
+
 :::
 
-::: {.g-col-3}
+::: {.g-col-6}
 
 ::: {.class-buttons}
 
@@ -36,13 +35,8 @@ path_pdf <- file.path("parts", part, glue::glue("{part}.pdf"))
 
 :::
 
-::: {.g-col-3}
-
 :::
-
 
 ```{r lexi-demo, echo=FALSE}
 xaringanExtra::embed_xaringan(url = path_slides, ratio = "16:9")
 ```
-
-:::
