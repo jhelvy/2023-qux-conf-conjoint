@@ -1,16 +1,27 @@
----
-title: "Quant UX 2023 Workshop:"
----
 
-# An Open Source Framework for Choice Based Conjoint Experiments in R
+# Quant UX 2023 Workshop:<br>An Open Source Framework for<br>Choice Based Conjoint Experiments in R
 
 <hr>
 
-John Paul Helveston
+::: {.grid}
 
-June 15, 2023
+::: {.g-col-3}
 
-George Washington University
+<img src="images/logo.png" width="180">
+
+:::
+
+::: {.g-col-9}
+
+### John Paul Helveston
+
+### June 15, 2023
+
+### George Washington University
+
+:::
+
+:::
 
 <hr>
 

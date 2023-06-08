@@ -15,10 +15,7 @@ website:
   site-url: https://jhelvy.github.io/2023-qux-conf-conjoint/
   repo-url: https://github.com/jhelvy/2023-qux-conf-conjoint
   description: 'Content for my workshop at the 2023 Quant UX Conference on open source conjoint.'
-  search:
-    location: navbar
-    type: overlay
-    copy-button: true
+  search: true
   open-graph:
     locale: es_ES
     site-name: https://jhelvy.github.io/2023-qux-conf-conjoint/
@@ -65,7 +62,7 @@ website:
 
 format:
   html:
-    theme: lux
+    theme: cosmo
     css: styles.css
     anchor-sections: true
     smooth-scroll: true

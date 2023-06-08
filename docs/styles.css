@@ -1,48 +1,13 @@
 /* Text */
 
-h1{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 60px;
-}
-
-h2{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 50px;
-}
-
-h3{
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 40px;
-}
-
-b, strong {
-    font-weight: 1000;
-    color: #000000;
-}
-
-body {
-  font-size: 16px;
-  line-height: 26px;
-}
-
-blockquote{
+blockquote {
   background-color: #ecf0f1;
   padding: 20px;
-  border-color: #dd4814;
+  border-color: #2296f3;
   border-radius: 5px;
 }
-
 blockquote h3 {
   margin-top: 0px;
-}
-
-/* Images */
-
-img {
-  padding-bottom: 10px;
 }
 
 /* Tables */
@@ -51,20 +16,16 @@ table {
   border-collapse: collapse;
   margin-bottom:10px;
 }
-
 thead {
   border-top: solid #DCDCDC;
   border-bottom: solid #DCDCDC;
 }
-
 tr.odd {
   background-color: #F8F8F8;
 }
-
 tr:first-child {
   border-top: solid #DCDCDC;
 }
-
 tr:last-child {
   border-bottom: solid #DCDCDC;
 }
@@ -74,8 +35,9 @@ tr:last-child {
 }
 
 .btn-slides {
-  background-color: #000000;
+  background-color: #2296f3;
   color: #fff;
+  font-weight: bold;
   font-size: 16px;
   border-radius: 10px; /* Rounded edges */
   text-align: center;
@@ -85,7 +47,7 @@ tr:last-child {
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  padding: .5rem;
+  padding: .9rem;
   line-height: .5;
   border-radius: .3rem;
 }
@@ -93,6 +55,7 @@ tr:last-child {
 .btn-notes {
   background-color: #000000;
   color: #fff;
+  font-weight: bold;
   font-size: 16px;
   border-radius: 10px; /* Rounded edges */
   text-align: center;
@@ -102,7 +65,12 @@ tr:last-child {
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  padding: .5rem;
+  padding: .9rem;
   line-height: .5;
   border-radius: .3rem;
 }
+
+.sidebar-title {
+  color: #cbcccc;
+}
+ 
