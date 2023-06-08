@@ -1,6 +1,0 @@
----
-title: "Licensing and copyright information"
----
-
-The material presented on this site is licensed under the
-[Creative Commons ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).

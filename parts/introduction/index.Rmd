@@ -289,68 +289,21 @@ class: center
 
 ---
 
-## .center[Choice-Based Conjoint Analysis Steps]
+background-image: url("images/software-closed.png")
+background-size: cover
 
-<br>
-
-## 1. Design a survey (design of experiment)
-## 2. Implement it online
-## 3. (Collect data) <- not covering this today
-## 4. Estimate models 
+## Choice-Based Conjoint **Software**
 
 ---
 
-background-color: #fff
+background-image: url("images/software-open.png")
+background-size: cover
 
-### .center[**Software** for Choice-Based Conjoint Analysis]
+## Choice-Based Conjoint **Software**
 
-<center>
-<img src="images/software-table.png" width=900>
-</center>
 
---
 
-- **.red[Licenses cost $$$]**
 
---
-
-- **.red[Not reproducible]**
-
----
-
-class: center
-
-# **FOSS** for Choice-Based Conjoint Analysis
-
-.cols3[
-
-## .center[Experiment Design]
-
-<center>
-<img src="images/cbctools.png" width=250>
-</center>
-
-]
-
-.cols3[
-
-## .center[Online Surveys]
-
-<br>
-
-## .center[.font200[<span style="font-family: Roboto,Arial,sans-serif;"><span style="color: #8dc63f;">f</span>orm<span style="color: #8dc63f;">{`r}</span></span>]]
-
-]
-
-.cols3[
-
-## .center[Model Estimation]
-
-<center>
-<img src="images/logitr.png" width=250>
-</center>
-
-]
 
 ---
 
@@ -358,7 +311,7 @@ class: inverse
 
 <br>
 
-## .center[Back to workshop website:<br><br> https://jhelvy.github.io/2023-qux-conf-conjoint/]
+### .center[Back to workshop website: https://jhelvy.github.io/2023-qux-conf-conjoint/]
 
 .footer-large[
 
