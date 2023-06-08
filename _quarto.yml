@@ -1,0 +1,73 @@
+project:
+  type: website
+  output-dir: docs
+  preview:
+    port: 5896
+    browser: false
+  render:
+    - "*.qmd"
+  resources:
+    - "parts"
+
+website:
+  title: Open Source Conjoint
+  image: images/logo.png
+  site-url: https://jhelvy.github.io/2023-qux-conf-conjoint/
+  repo-url: https://github.com/jhelvy/2023-qux-conf-conjoint
+  description: 'Content for my workshop at the 2023 Quant UX Conference on open source conjoint.'
+  search:
+    location: navbar
+    type: overlay
+    copy-button: true
+  open-graph:
+    locale: es_ES
+    site-name: https://jhelvy.github.io/2023-qux-conf-conjoint/
+  twitter-card:
+    creator: "@johnhelveston"
+    site: "@johnhelveston"
+    card-style: summary
+  sidebar:
+    style: "docked"
+    background: "dark"
+    collapse-level: 1
+    search: true
+    contents:
+      - text: Home
+        icon: house-door-fill
+        href: index.qmd
+      - text: "1: Introduction"
+        icon: map-fill
+        href: parts/introduction.qmd
+      - text: "2: Designing Surveys"
+        icon: list-check
+        href: parts/designing-surveys.qmd
+      - text: "3: Estimating Models"
+        icon: activity
+        href: parts/estimating-models.qmd
+      - text: "4: Fielding Surveys"
+        icon: globe
+        href: parts/fielding-surveys.qmd
+      - section: Other
+        icon: question-circle-fill
+        contents:
+          - text: License
+            icon: award-fill
+            href: LICENSE.qmd
+          - text: Contact
+            icon: envelope-fill
+            href: mailto:jph@gwu.edu
+          - text: Source files
+            icon: github
+            href: https://github.com/jhelvy/2023-qux-conf-conjoint
+  page-footer:
+    center:
+      - text: 'Quant UX 2023 Workshop: Open Source Conjoint (Summer 2023)<br><a href="https://www.jhelvy.com"><i class="fas fa-user"></i> Dr. John Paul Helveston</a> | <a href="mailto:jph@gwu.edu"><i class="fas fa-envelope"></i></a> | <a href="https://github.com/jhelvy/dtais-dataviz"><i class="fa fa-github"></i></a> | <a href="https://twitter.com/JohnHelveston"><i class="fa fa-twitter"></i></a> <a href="LICENSE.html">LICENSE: CC-BY-SA <i class="fab fa-creative-commons"></i><i class="fab fa-creative-commons-by"></i><i class="fab fa-creative-commons-sa"></i></a>'
+
+format:
+  html:
+    theme: lux
+    css: styles.css
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    include-in-header: "_includes/header.html"

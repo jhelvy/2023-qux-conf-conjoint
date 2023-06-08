@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Licensing and copyright information",
+    "section": "",
+    "text": "The material presented on this site is licensed under the Creative Commons ShareAlike 4.0 International License."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quant UX 2023 Workshop:",
+    "section": "",
+    "text": "An Open Source Framework for Choice Based Conjoint Experiments in R\n\nJohn Paul Helveston\nJune 15, 2023\nGeorge Washington University\n\n\n\nPart 1: Introduction\nIn this section, we will address:\n\nWhat is conjoint analysis?\nWhy R?\nHigh-level overview of open source conjoint workflow.\n\n\n\nPart 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power\n\n\n\nPart 3: Estimating models with {logitr}\nIn this section, we will discuss how to use the {logitr} package to estimate logit models on simulated data, including:\n\nMixed logit models\nWTP space models\n\n\n\nPart 4: Fielding surveys with formr\nIn this section, we will discuss how to use the formr platform to field conjoint surveys online, including:\n\nUsing RMarkdown to design a survey\nImplementing a choice-based conjoint survey in formr"
+  },
+  {
+    "objectID": "parts/designing-surveys.html",
+    "href": "parts/designing-surveys.html",
+    "title": "Designing Surveys",
+    "section": "",
+    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+  },
+  {
+    "objectID": "parts/estimating-models.html",
+    "href": "parts/estimating-models.html",
+    "title": "Estimating Models",
+    "section": "",
+    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+  },
+  {
+    "objectID": "parts/fielding-surveys.html",
+    "href": "parts/fielding-surveys.html",
+    "title": "Fielding Surveys",
+    "section": "",
+    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+  },
+  {
+    "objectID": "parts/introduction.html",
+    "href": "parts/introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": ":::{.column-body-outset}\n\n\nKEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
+  }
+]
