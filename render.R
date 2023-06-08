@@ -4,9 +4,9 @@ library(renderthis)
 # Render slides 
 parts <- c(
     'introduction',
-    'designing-surveys',
-    'estimating-models',
-    'fielding-surveys'
+    'designing-surveys'
+    # 'estimating-models',
+    # 'fielding-surveys'
 )
 
 for (part in parts) {

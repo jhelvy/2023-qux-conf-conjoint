@@ -188,6 +188,20 @@ class: center, middle, inverse
 
 ---
 
+class: center
+
+## Directly asking people what they want isn't always helpful
+
+--
+
+### (People want everything)
+
+<center>
+<img src="images/the_homer.png" width=700>
+</center>
+
+---
+
 class: center, middle 
 
 ## Which feature do you care more about?
