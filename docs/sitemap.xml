@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/LICENSE.html</loc>
-    <lastmod>2023-06-08T13:55:53.632Z</lastmod>
+    <lastmod>2023-06-08T17:48:27.286Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/index.html</loc>
-    <lastmod>2023-06-08T16:12:57.338Z</lastmod>
+    <lastmod>2023-06-08T17:48:27.614Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/parts/designing-surveys.html</loc>
-    <lastmod>2023-06-08T16:12:49.224Z</lastmod>
+    <lastmod>2023-06-08T17:48:28.482Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/parts/estimating-models.html</loc>
-    <lastmod>2023-06-08T16:12:51.834Z</lastmod>
+    <lastmod>2023-06-08T17:48:29.340Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/parts/fielding-surveys.html</loc>
-    <lastmod>2023-06-08T16:12:53.235Z</lastmod>
+    <lastmod>2023-06-08T17:48:30.203Z</lastmod>
   </url>
   <url>
     <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/parts/introduction.html</loc>
-    <lastmod>2023-06-08T16:12:45.006Z</lastmod>
+    <lastmod>2023-06-08T17:48:31.040Z</lastmod>
+  </url>
+  <url>
+    <loc>https://jhelvy.github.io/2023-qux-conf-conjoint/software.html</loc>
+    <lastmod>2023-06-08T17:48:31.986Z</lastmod>
   </url>
 </urlset>

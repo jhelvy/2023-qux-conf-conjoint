@@ -42,17 +42,10 @@
     "text": "KEYBOARD SHORTCUTS FOR SLIDES:\n\nUse ← and → to navigate through the slides.\nUse f to toggle full screen.\nUse o to view an overview of all slides.\nUse h to see a list of other shortcuts.\n\n\n\n\nSLIDES\n View slides\n Download PDF"
   },
   {
-    "objectID": "index.html#part-1-introduction",
-    "href": "index.html#part-1-introduction",
-    "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
-    "section": "Part 1: Introduction",
-    "text": "Part 1: Introduction\nIn this section, we will address:\n\nWhat is conjoint analysis?\nWhy R?\nHigh-level overview of open source conjoint workflow.\n\n\nPart 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power"
-  },
-  {
-    "objectID": "index.html#part-2-designing-surveys-with-cbctools",
-    "href": "index.html#part-2-designing-surveys-with-cbctools",
-    "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
-    "section": "Part 2: Designing surveys with {cbcTools}",
-    "text": "Part 2: Designing surveys with {cbcTools}\nIn this section, we will discuss how to use the {cbcTools} package to design and test choice-based conjoint surveys, including:\n\nDesign of experiment\nSimulating choices\nAssessing power"
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "Software\n\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nOpen RStudio and run this code to install the packages we’ll be using:\n\n\ninstall.packages('logitr')\ninstall.packages('cbcTools')\n\n\nAs a backup, sign up for Posit Cloud (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\n\n\nFor reference, “Posit” is the company that makes “RStudio”, the software we’ll use to work with R.\n\nThat’s it - you’re all set!"
   }
 ]
