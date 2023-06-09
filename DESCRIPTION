@@ -20,4 +20,5 @@ Imports:
     quarto,
     renderthis,
     rmarkdown,
-    tidyverse
+    tidyverse,
+    xaringanExtra
