@@ -4,8 +4,8 @@ title: "Introduction"
 
 ```{r, echo=FALSE}
 part <- "introduction"
-path_slides <- file.path("parts", part, "index.html")
-path_pdf <- file.path("parts", part, glue::glue("{part}.pdf"))
+path_slides <- file.path(part, "index.html")
+path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 ```
 
 ::: {.grid}
