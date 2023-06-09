@@ -22,4 +22,5 @@ Imports:
     renderthis,
     rmarkdown,
     tidyverse,
+    qs,
     xaringanExtra
