@@ -1,8 +1,8 @@
 ---
-title: "Open Source Conjoint: Introduction"
+title: "Introduction to Open Source Conjoint"
 date: June 15, 2023
 author: "John Paul Helveston, Ph.D."
-institute: "Eng. Management & Systems Eng."
+institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
   xaringan::moon_reader:
     css:
@@ -74,6 +74,8 @@ layout: true
 ---
 
 class: middle, inverse
+
+## .center[`r rmarkdown::metadata$title`]
 
 .leftcol40[
 

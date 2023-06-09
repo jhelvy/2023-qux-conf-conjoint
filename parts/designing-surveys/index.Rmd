@@ -1,5 +1,5 @@
 ---
-title: "Open Source Conjoint: Designing Conjoint Surveys with {cbcTools}"
+title: "Designing Conjoint Surveys with {cbcTools}"
 author: "John Paul Helveston"
 date: June 15, 2023
 institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
@@ -75,6 +75,8 @@ layout: true
 ---
 
 class: middle, inverse
+
+## .center[`r rmarkdown::metadata$title`]
 
 .leftcol40[
 
