@@ -16,8 +16,7 @@ for (part in parts) {
     )
     to_pdf(
         from = file.path('parts', part, 'index.html'), 
-        to = file.path('parts', part, glue::glue('{part}.pdf')),
-        partial_slides = TRUE
+        to = file.path('parts', part, glue::glue('{part}.pdf'))
     )
 }
 
