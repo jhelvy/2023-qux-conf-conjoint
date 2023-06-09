@@ -67,35 +67,17 @@ class: middle, inverse
 
 ---
 
----
+# Strategy for building a survey in [formr](https://formr.org/)
 
+&lt;br&gt;
 
+## - Use _RMarkdown / html_ to create survey elements
 
-class: inverse, middle
+## - Copy elements to a _Google Sheet_
 
-# Week : .fancy[Fielding Surveys with formr]
+## - Import Google Sheets into formr _surveys_
 
-### 1. Surveys in R
-### 2. Surveys in formr
-
-### BREAK
-
-### 3. Conjoint survey components
-
----
-
-
-
-class: inverse, middle
-
-# Week : .fancy[Fielding Surveys with formr]
-
-### 1. .orange[Surveys in R]
-### 2. Surveys in formr
-
-### BREAK
-
-### 3. Conjoint survey components
+## - Link surveys together in formr _runs_
 
 ---
 
@@ -127,10 +109,10 @@ I recommend just writing html code, like this
 
 
 ```html
-&lt;img src="https://raw.githubusercontent.com/emse-madd-gwu/2022-Fall/main/images/logo.png" width=250&gt;
+&lt;img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=250&gt;
 ```
 
-&lt;img src="https://raw.githubusercontent.com/emse-madd-gwu/2022-Fall/main/images/logo.png" width=250&gt;
+&lt;img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=250&gt;
 
 ---
 
@@ -141,12 +123,12 @@ I recommend just writing html code, like this
 
 ```html
 &lt;center&gt;
-&lt;img src="https://raw.githubusercontent.com/emse-madd-gwu/2022-Fall/main/images/logo.png" width=250&gt;
+&lt;img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=250&gt;
 &lt;/center&gt;
 ```
 
 &lt;center&gt;
-&lt;img src="https://raw.githubusercontent.com/emse-madd-gwu/2022-Fall/main/images/logo.png" width=250&gt;
+&lt;img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=250&gt;
 &lt;/center&gt;
 
 ---
@@ -155,57 +137,13 @@ I recommend just writing html code, like this
 
 &lt;br&gt;
 
-This is the link to the Github page with the class logo image:
+This is the link to the **Github page** with the image:
 
-https://github.com/emse-madd-gwu/2022-Fall/blob/main/images/logo.png
+https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png
 
-This is the link to the actual image:
+This is the link to the **actual image**:
 
-https://raw.githubusercontent.com/emse-madd-gwu/2022-Fall/main/images/logo.png
-
----
-
-class: inverse
-
-
-## Your turn
-
-- Open and edit the `practiceSurvey.Rmd` file.
-- Pick a topic for your survey (a food, an animal, a sports team...whatever).
-- Draft a survey about that topic. Include the following:
-    - Page 1: A welcome message in large font ("Welcome to a survey about [topic]") and an image about the topic (find an image somewhere).
-    - Page 2: Once simple multiple choice question about the topic (state the question and write the choice responses as bullets).
-    - Page 3: Choose a data set from [this page](https://github.com/emse-eda-gwu/2022-Fall/tree/master/data) (pick a .csv file). Get the url to the .csv file you chose, read it in, and display only the first 6 rows of the data file (do not show any code - only the output of your code).
-    - Page 4: Show the last 6 rows of the same data file (again, only the output - hide all code).
-
----
-
-
-
-class: inverse, middle
-
-# Week : .fancy[Fielding Surveys with formr]
-
-### 1. Surveys in R
-### 2. .orange[Surveys in formr]
-
-### BREAK
-
-### 3. Conjoint survey components
-
----
-
-# formr principles
-
-&lt;br&gt;
-
-## - Use _RMarkdown / html_ to create survey elements
-
-## - Define surveys in _Google Sheets_
-
-## - Import Google Sheets into formr _surveys_
-
-## - Link surveys together in formr _runs_
+https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true
 
 ---
 
@@ -233,19 +171,23 @@ Type | Description
 # Two ways to define choice options
 
 .leftcol[
+
 Add "choice" columns
 
 &lt;center&gt;
 &lt;img src="images/choices.png" width=100%&gt;
 &lt;/center&gt;
+
 ]
 
 --
 
 .rightcol[
+
 Use `choices` tab&lt;br&gt;(when you have a lot of choices)
 
 Example: "Year of birth" in [randomImagesDemo](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing)
+
 ]
 
 ---
@@ -318,39 +260,9 @@ class: center
 
 ---
 
-class: inverse
+class: center, middle, inverse
 
-
-
-## Your turn
-
-- Using your GW Google drive, create a new survey spreadsheet&lt;br&gt;(you may wish to copy-paste from [this one](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing))
-- Name your sheet "`[netID]_practice`", replacing "`[netID]`" with your GW Net ID&lt;br&gt;(e.g. "`jph_practice`")
-- Insert the content in your `practiceSurvey.Rmd` file into your Google Sheet.
-- Using the class formr account, import your Google Sheet as a survey in formr (use the same "`[netID]_practice`" name for your survey).
-- Create a run that includes your survey and a stop.
-- Test it!
-
----
-
-class: inverse, center
-
-# .fancy[Break]
-
----
-
-
-
-class: inverse, middle
-
-# Week : .fancy[Fielding Surveys with formr]
-
-### 1. Surveys in R
-### 2. Surveys in formr
-
-### BREAK
-
-### 3. .orange[Conjoint survey components]
+# Making a _conjoint_ survey in formr
 
 ---
 
@@ -375,204 +287,7 @@ class: inverse, middle
 
 ---
 
-# .center[Think of your survey as a _conversation_]
 
-&lt;br&gt;
-
-- Include "transition" pages (e.g. Great job! Now we'll ask you about...)
-
----
-
-class: middle, center, inverse
-
-# **Part 1**: Intro
-
----
-
-class: center
-
-# Start with a welcome page
-
-&lt;center&gt;
-&lt;img src="images/1welcome page.png" width=800&gt;
-&lt;/center&gt;
-
----
-
-class: center, middle
-
-.leftcol30[
-
-# Consent form
-
-]
-
-.rightcol70[
-
-&lt;center&gt;
-&lt;img src="images/2consent.png" width=500&gt;
-&lt;/center&gt;
-
-]
-
----
-
-class: center
-
-## **Eligibility questions**: who is your target population?
-
-### .red[_Filter out respondents here_]
-
-&lt;center&gt;
-&lt;img src="images/3filter.png" width=700&gt;
-&lt;/center&gt;
-
----
-
-class: middle, center, inverse
-
-# **Part 2**: Conjoint questions
-
----
-
-class: middle, center
-
-# Education information
-
-&lt;center&gt;
-&lt;img src="images/5education1.png" width=700&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-# Education information
-
-.leftcol[
-
-&lt;center&gt;
-&lt;img src="images/5education2.png"&gt;
-&lt;/center&gt;
-
-]
-
-.rightcol[
-
-&lt;center&gt;
-&lt;img src="images/5education3.png"&gt;
-&lt;/center&gt;
-
-]
-
----
-
-## .center[Can be helpful to provide relative comparisons]
-
-Weight:
-
-- 1/2 lbs (similar to 1 cup water)
-- 8 lbs (similar to 1 gallon of milk)
-
----
-
-class: center
-
-# Conjoint intro
-
-&lt;center&gt;
-&lt;img src="images/6conjoint_intro1.png" width=800&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-## Practice conjoint (also attention check)
-
-### .red[_May also filter out respondents here_]
-
-&lt;center&gt;
-&lt;img src="images/7conjoint_practice.png" width=550&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-# Transition to actual conjoint questions
-
-&lt;center&gt;
-&lt;img src="images/8conjoint_intro2.png" width=700&gt;
-&lt;/center&gt;
-
----
-
-class: middle
-
-.leftcol40[
-
-# Conjoint questions
-
-### .red[_May also filter out respondents at the end_]
-
-(e.g. chose all same answers)
-
-]
-
-.rightcol60[
-
-&lt;center&gt;
-&lt;img src="images/9conjoint.png" width=600&gt;
-&lt;/center&gt;
-
-]
-
----
-
-class: middle, center, inverse
-
-# **Part 3**: Other / demographic questions
-
----
-
-class: center
-
-# Transition
-
-&lt;center&gt;
-&lt;img src="images/10wrap_up.png" width=700&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-# Critical respondent information
-
-&lt;center&gt;
-&lt;img src="images/4critical_info.png" width=900&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-# Demographic / other questions
-
-&lt;center&gt;
-&lt;img src="images/11demo.png" width=500&gt;
-&lt;/center&gt;
-
----
-
-class: center
-
-# Finale
-
-&lt;center&gt;
-&lt;img src="images/12end.png" width=900&gt;
-&lt;/center&gt;
 
 ---
 

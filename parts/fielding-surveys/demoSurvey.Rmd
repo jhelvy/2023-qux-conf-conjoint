@@ -86,5 +86,5 @@ The temperature anomaly in 2020 was `r data2020$meanTemp` degrees Celsius.
 Here's an image 
 
 <center>
-<img src="https://github.com/emse-madd-gwu/2021-Fall/raw/master/images/madd_hex_sticker.png" width=300>
+<img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=300>
 </center>
