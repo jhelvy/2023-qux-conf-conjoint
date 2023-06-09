@@ -21,7 +21,7 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 
 :::
 
-::: {.g-col-6}
+::: {.g-col-3}
 
 ::: {.class-buttons}
 
@@ -30,6 +30,18 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 <a href=`r path_slides` class="btn-slides" target="_blank"><i class="fas fa-external-link-alt"></i> View slides</a>
 
 <a href=`r path_pdf` class="btn-slides"><i class="fas fa-file-pdf"></i> Download PDF</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+**RESOURCES**
+
+<a href="https://jhelvy.github.io/cbcTools/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a>
 
 :::
 

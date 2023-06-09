@@ -21,7 +21,7 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 
 :::
 
-::: {.g-col-6}
+::: {.g-col-3}
 
 ::: {.class-buttons}
 

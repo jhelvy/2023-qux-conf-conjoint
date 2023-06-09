@@ -3,7 +3,7 @@ title: "Fielding Surveys"
 ---
 
 ```{r, echo=FALSE}
-part <- "introduction"
+part <- "fielding-surveys"
 path_slides <- file.path(part, "index.html")
 path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 ```
@@ -21,7 +21,7 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 
 :::
 
-::: {.g-col-6}
+::: {.g-col-3}
 
 ::: {.class-buttons}
 
@@ -30,6 +30,20 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 <a href=`r path_slides` class="btn-slides" target="_blank"><i class="fas fa-external-link-alt"></i> View slides</a>
 
 <a href=`r path_pdf` class="btn-slides"><i class="fas fa-file-pdf"></i> Download PDF</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+**RESOURCES**
+
+<a href="https://formr.org/" class="btn-notes"><i class="fas fa-external-link-alt"></i> formr</a>
+
+<a href="https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Blog post</a>
 
 :::
 
