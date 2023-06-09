@@ -126,174 +126,9 @@ class: center
 
 ---
 
-# .center[A simple conjoint experiment about _cars_]
-
-Attribute | Levels
-----------|----------
-Brand     | GM, BMW, Ferrari
-Price     | $20k, $40k, $100k
-
-.center[**Design: .red[9] choice sets, .blue[3] alternatives each**]
-
---
-
-.leftcol[
-
-```
-Attribute counts:
-
-brand:
-  GM   BMW  Ferrari 
-  10    11    6 
-
-price:
-
- 20k  40k 100k 
-  9    9   9
-```
-
-]
-
---
-
-.rightcol[
-
-```
-Pairwise attribute counts:
-
-brand & price:
-         
-          20k 40k 100k
-  GM        3   0    7
-  BMW       4   5    2
-  Ferrari   2   4    0
-```
-
-]
-
----
-
-# .center[A simple conjoint experiment about _cars_]
-
-Attribute | Levels
-----------|----------
-Brand     | GM, BMW, Ferrari
-Price     | $20k, $40k, $100k
-
-.center[**Design: .red[90] choice sets, .blue[3] alternatives each**]
-
---
-
-.leftcol[
-
-```
-Attribute counts:
-
-brand:
-  GM    BMW   Ferrari 
-  92    80     98
-
-price:
-
-  20k  40k 100k 
-  91   84   95 
-```
-
-]
-
---
-
-.rightcol[
-
-```
-Pairwise attribute counts:
-
-brand & price:
-         
-          20k 40k 100k
-  GM      31  31  30
-  BMW     25  25  30
-  Ferrari 35  28  35
-```
-
-]
-
----
-
-# .center[Bayesian D-efficient designs]
-
-### .center[Maximize information on "Main Effects" according to priors]
-
-Attribute | Levels | Prior
-----------|-------------------|----------
-Brand     | GM, BMW, Ferrari  | 0, 1, 2
-Price     | $20k, $40k, $100k | 0, -1, -4
-
---
-
-.leftcol[
-
-```
-Attribute counts:
-
-brand:
-  GM    BMW   Ferrari 
-  93    90     86
-
-price:
-
-  20k  40k 100k 
-  97   93   78
-```
-
-]
-
---
-
-.rightcol[
-
-```
-Pairwise attribute counts:
-
-brand & price:
-         
-          20k 40k 100k
-  GM      52  41  0
-  BMW     30  30  30
-  Ferrari 15  22  49
-```
-
-]
-
----
-
-# .center[But what about other factors?]
-
-<br>
-
-- What if I add one more choice question to each respondent?
-
---
-
-- What if I increase the number of alternatives per choice question?
-
---
-
-- What if I use a labeled design (aka "alternative-specific design")?
-
---
-
-- What if I include a "none" option (aka "outside good")?
-
---
-
-- What if there are interaction effects?
-
----
-
 class: middle, center, inverse 
 
-# The `{cbcTools}` Package 
+## .center[A systematic workflow for designing a CBC experiment]
 
 <center>
 <img src="images/logo.png" width=30%>
@@ -303,13 +138,13 @@ class: middle, center, inverse
 
 background-image: url("images/process.png")
 
-## .center[Systematic workflow for designing a cbc experiment]
+## .center[A systematic workflow for designing a CBC experiment]
 
 ---
 
 background-image: url("images/process_labels.png")
 
-## .center[Systematic workflow for designing a cbc experiment]
+## .center[A systematic workflow for designing a CBC experiment]
 
 ---
 
@@ -317,9 +152,11 @@ class: center, middle
 background-image: url("images/process_labels.png")
 
 .border[
+
 <center>
 <img src="images/cbc_screenshot.png" width=80%>
 </center>
+
 ]
 
 ---
@@ -328,14 +165,27 @@ background-image: url("images/process_levels.png")
 
 ---
 
+class: center
+background-color: #fff
+
+## Example CBC question about apples
+
+<center>
+<img src="images/example.png" width=800>
+</center>
+
+---
+
 background-color: #fff
 
 ## .center[Define the attributes and levels]
 
+<br>
+
 .leftcol30[
 
 <center>
-<img src="images/fuji.jpg" width=100%>
+<img src="images/fuji.jpg" width=250>
 </center>
 
 ]
@@ -345,23 +195,12 @@ background-color: #fff
 <br>
 
 - **Price ($/lb)**: 1.00, 1.50, 2.00, 2.50, 3.00, 3.50, 4.00
+
 - **Type**: Fuji, Gala, Honeycrisp
+
 - **Freshness**: Excellent, Average, Poor
 
 ]
-
----
-
-class: center
-background-color: #fff
-
-## Define the attributes and levels
-
-Example choice question
-
-<center>
-<img src="images/example.png" width=700>
-</center>
 
 ---
 
