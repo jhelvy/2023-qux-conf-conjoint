@@ -23,6 +23,7 @@ library(knitr)
 library(tidyverse)
 library(fontawesome)
 library(metathis)
+library(cbcTools)
 
 options(
   htmltools.dir.version = FALSE,
@@ -67,6 +68,112 @@ meta() %>%
     twitter_card_type = "summary_large_image",
     twitter_creator = "@johnhelveston"
   )
+
+# make design
+
+# Define profiles with attributes and levels
+
+profiles <- cbc_profiles(
+    price       = c(15, 20, 25), # Price ($1,000)
+    fuelEconomy = c(20, 25, 30), # Fuel economy (mpg)
+    accelTime   = c(6, 7, 8),    # 0-60 mph acceleration time (s)
+    powertrain  = c("Gasoline", "Electric")
+)
+
+# Make a full-factorial design of experiment
+
+design <- cbc_design(
+    profiles = profiles,
+    n_resp   = 500, # Number of respondents
+    n_alts   = 3,   # Number of alternatives per question
+    n_q      = 8    # Number of questions per respondent
+)
+# Make a labeled full-factorial design of experiment
+
+design_labeled <- cbc_design(
+    profiles = profiles,
+    n_resp   = 500, # Number of respondents
+    n_alts   = 2,   # Number of alternatives per question
+    n_q      = 8,   # Number of questions per respondent
+    label    = "powertrain"
+)
+
+# Make a survey with no choice option
+
+design_nochoice <- cbc_design(
+    profiles = profiles,
+    n_resp   = 500, # Number of respondents
+    n_alts   = 3,   # Number of alternatives per question
+    n_q      = 8,   # Number of questions per respondent
+    no_choice = TRUE
+)
+
+design_short <- design %>%
+  mutate(
+    price = scales::dollar(price),
+    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
+    accelTime = paste0(accelTime, " (s)")
+  ) %>% 
+  select(
+    respID, qID,
+    `Option:` = altID, 
+    `Price:` = price, 
+    `Fuel Economy:` = fuelEconomy, 
+    `Accel. Time:` = accelTime, 
+    `Powertrain:` = powertrain
+  )
+design_labeled_short <- design_labeled %>%
+  mutate(
+    price = scales::dollar(price),
+    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
+    accelTime = paste0(accelTime, " (s)")
+  ) %>% 
+  select(
+    respID, qID,
+    `Option:` = powertrain, 
+    `Price:` = price, 
+    `Fuel Economy:` = fuelEconomy, 
+    `Accel. Time:` = accelTime
+  )
+design_nochoice_short <- design_nochoice %>%
+  mutate(
+    price = scales::dollar(price),
+    fuelEconomy = paste0(fuelEconomy, " (mpg)"),
+    accelTime = paste0(accelTime, " (s)"),
+    price = ifelse(altID == 4, "", price),
+    fuelEconomy = ifelse(altID == 4, "", fuelEconomy),
+    accelTime = ifelse(altID == 4, "", accelTime),
+    powertrain = ifelse(powertrain_Electric == 1, "Electric", "Gasoline"),
+    powertrain = ifelse(altID == 4, "", powertrain),
+    altID = ifelse(altID == 4, "None", altID)
+  ) %>% 
+  select(
+    respID, qID,
+    `Option:` = altID, 
+    `Price:` = price, 
+    `Fuel Economy:` = fuelEconomy, 
+    `Accel. Time:` = accelTime, 
+    `Powertrain:` = powertrain
+  )
+row.names(design_nochoice_short) <- seq(nrow(design_nochoice_short))
+design_q1 <- design_short %>%
+  filter(respID == 1, qID == 1) %>% 
+  select(-respID, -qID)
+design_q2 <- design_short %>%
+  filter(respID == 1, qID == 2) %>% 
+  select(-respID, -qID)
+design_labeled_q1 <- design_labeled_short %>%
+  filter(respID == 1, qID == 1) %>% 
+  select(-respID, -qID)
+design_labeled_q2 <- design_labeled_short %>%
+  filter(respID == 1, qID == 2) %>% 
+  select(-respID, -qID)
+design_nochoice_q1 <- design_nochoice_short %>%
+  filter(respID == 1, qID == 1) %>% 
+  select(-respID, -qID)
+design_nochoice_q2 <- design_nochoice_short %>%
+  filter(respID == 1, qID == 2) %>% 
+  select(-respID, -qID)
 ```
 
 layout: true
@@ -314,6 +421,271 @@ class: center, middle, inverse
 ---
 
 
+# .center[Displaying your choice questions online]
+
+### 1. Export your choice questions as a .csv file
+### 2. Upload your .csv file somewhere (e.g. GitHub)
+### 3. Use R code to extract the values to display 
+### 4. Use RMarkdown to display the values
+
+---
+
+### 1. Export your choice questions as a .csv file
+
+```{r}
+#| eval: false
+
+write_csv(design, here('choice_questions.csv'))
+```
+
+--
+
+### 2. Upload your .csv file somewhere
+
+.leftcol[.center[
+
+### Inside a formr run (private)
+
+<center>
+<img src="images/upload.png" width=500>
+</center>
+
+]]
+
+.rightcol[.center[
+
+### github.com (public)
+
+.font200[[`r fa("github")`](https://github.com/)]
+
+[apples example](https://github.com/jhelvy/formr4conjoint)
+
+]]
+
+---
+
+## .center[Use R code to extract the values to display]
+
+### - Read `choice_questions.csv` from web
+### - Randomly choose a respondent ID
+### - Filter rows for that respondent ID
+### - Serialize the data frame to json format
+
+---
+
+# .center[Side note on serializing a data frame]
+
+.center[Converts a data frame to one long string]
+
+```{r, echo=FALSE}
+df <- design %>%
+  filter(obsID == 1) %>% 
+  select(-respID, -qID, -obsID)
+```
+
+```{r}
+df
+```
+
+```{r}
+df_json <- jsonlite::toJSON(df)
+df_json
+```
+
+---
+
+# .center[Use RMarkdown to display the values]
+
+.leftcol[
+
+Create separate data frames for each alternative
+
+```{r}
+library(dplyr)
+
+alts <- jsonlite::fromJSON(df_json)
+alt1 <- alts %>% filter(altID == 1)
+alt2 <- alts %>% filter(altID == 2)
+alt3 <- alts %>% filter(altID == 3)
+```
+
+]
+
+--
+
+.rightcol[
+
+Use RMarkdown formatting to display content in each alternative
+
+```{r}
+#| eval: false
+
+***Option 1**
+
+***Price**: $ `r alt1$price`
+***Powertrain**: $ `r alt1$powertrain`
+***Fuel Economy**: `r alt1$fuelEconomy` mpg
+***0-60 Accel. Time**: `r alt1$accelTime` s
+```
+
+**Option 1**
+
+**Price**: $ `r alt1$price`<br>
+**Powertrain**: $ `r alt1$powertrain`<br>
+**Fuel Economy**: `r alt1$fuelEconomy` mpg<br>
+**0-60 Accel. Time**: `r alt1$accelTime` s
+
+]
+
+---
+
+## .center[Show options in a table with `kable()`]
+
+.leftcol[
+
+```{r}
+library(dplyr)
+
+alts <- jsonlite::fromJSON(df_json) %>%
+  # Add $ sign to price
+  mutate(price = scales::dollar(price)) %>% 
+  # Make nicer attribute labels
+  select(
+    `Option:`             = altID, 
+    `Powertrain:`         = powertrain,
+    `Price:`              = price, 
+    `Fuel Economy (mpg):` = fuelEconomy, 
+    `Accel. Time (s):`    = accelTime)
+
+# Drop row names
+row.names(alts) <- NULL
+```
+
+]
+
+.rightcol[
+
+Display the _transpose_, `t(alts)`
+
+```{r}
+kable(t(alts))
+```
+
+]
+
+---
+
+class: center 
+
+## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
+
+(code used in the related [blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
+
+<center>
+<img src="images/formr4conjoint.png" width=870>
+</center>
+
+---
+
+# Your first few rows
+
+<br>
+
+### - Read `choice_questions.csv` from web
+### - Randomly choose a respondent ID
+### - Filter rows for that respondent ID
+### - Serialize the data frame to json format
+
+---
+
+### Using the `calculate` type ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919))
+
+.leftcol[
+
+RMarkdown
+
+```{r, eval=FALSE}
+# Read in the choice questions
+library(tidyverse)
+design <- read_csv("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/choice_questions.csv")
+
+# Define the respondent ID
+respondentID <- sample(design$respID, 1)
+
+# Create the subset of rows for that respondent ID
+df <- design %>%
+    filter(respID == respondentID) %>%
+    mutate(image = paste0("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/", image))
+
+# Convert df to json
+df_json <- jsonlite::toJSON(df)
+```
+
+]
+
+.rightcol[
+
+Google sheet
+
+<center>
+<img src="images/calculate.png" width=100%>
+</center>
+
+]
+
+---
+
+## Random choice questions as **buttons** ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit?usp=sharing))
+
+Use the `mc_button` question type
+
+.leftcol[
+
+### `label`
+
+- Show your question text
+- Insert a code chunk to create one-row data frame for each alternative
+
+### `choice` columns
+
+- Insert RMarkdown code to display each alternative
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/cbc_buttons.png" width=100%>
+</center>
+
+]
+
+---
+
+## Random choice questions as **table** ([example sheet](https://docs.google.com/spreadsheets/d/1EG14Eh9kDBvE_iETfm6l6g90mrQ5sl_zbWaXkwIOGLU/edit?usp=sharing))
+
+- Use the `mc_button` question type
+
+.leftcol[
+### `label`
+
+- Show your question text
+- Insert a code chunk to modify `alts` data frame & display it using `kable()`
+- Use [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Basic_HTML_table) to control table styling
+
+### `choice` columns
+
+- Simple text / number for each option
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/cbc_table.png" width=100%>
+</center>
+
+]
 
 ---
 

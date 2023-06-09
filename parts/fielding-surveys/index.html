@@ -288,6 +288,317 @@ class: center, middle, inverse
 ---
 
 
+# .center[Displaying your choice questions online]
+
+### 1. Export your choice questions as a .csv file
+### 2. Upload your .csv file somewhere (e.g. GitHub)
+### 3. Use R code to extract the values to display 
+### 4. Use RMarkdown to display the values
+
+---
+
+### 1. Export your choice questions as a .csv file
+
+
+```r
+write_csv(design, here('choice_questions.csv'))
+```
+
+--
+
+### 2. Upload your .csv file somewhere
+
+.leftcol[.center[
+
+### Inside a formr run (private)
+
+&lt;center&gt;
+&lt;img src="images/upload.png" width=500&gt;
+&lt;/center&gt;
+
+]]
+
+.rightcol[.center[
+
+### github.com (public)
+
+.font200[[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>](https://github.com/)]
+
+[apples example](https://github.com/jhelvy/formr4conjoint)
+
+]]
+
+---
+
+## .center[Use R code to extract the values to display]
+
+### - Read `choice_questions.csv` from web
+### - Randomly choose a respondent ID
+### - Filter rows for that respondent ID
+### - Serialize the data frame to json format
+
+---
+
+# .center[Side note on serializing a data frame]
+
+.center[Converts a data frame to one long string]
+
+
+
+
+```r
+df
+```
+
+```
+#&gt;   profileID altID price fuelEconomy accelTime powertrain
+#&gt; 1        35     1    20          30         6   Electric
+#&gt; 2         1     2    15          20         6   Gasoline
+#&gt; 3        29     3    20          20         6   Electric
+```
+
+
+```r
+df_json &lt;- jsonlite::toJSON(df)
+df_json
+```
+
+```
+#&gt; [{"profileID":35,"altID":1,"price":20,"fuelEconomy":30,"accelTime":6,"powertrain":"Electric"},{"profileID":1,"altID":2,"price":15,"fuelEconomy":20,"accelTime":6,"powertrain":"Gasoline"},{"profileID":29,"altID":3,"price":20,"fuelEconomy":20,"accelTime":6,"powertrain":"Electric"}]
+```
+
+---
+
+# .center[Use RMarkdown to display the values]
+
+.leftcol[
+
+Create separate data frames for each alternative
+
+
+```r
+library(dplyr)
+
+alts &lt;- jsonlite::fromJSON(df_json)
+alt1 &lt;- alts %&gt;% filter(altID == 1)
+alt2 &lt;- alts %&gt;% filter(altID == 2)
+alt3 &lt;- alts %&gt;% filter(altID == 3)
+```
+
+]
+
+--
+
+.rightcol[
+
+Use RMarkdown formatting to display content in each alternative
+
+
+```r
+***Option 1**
+
+***Price**: $ `r alt1$price`
+***Powertrain**: $ `r alt1$powertrain`
+***Fuel Economy**: `r alt1$fuelEconomy` mpg
+***0-60 Accel. Time**: `r alt1$accelTime` s
+```
+
+**Option 1**
+
+**Price**: $ 20&lt;br&gt;
+**Powertrain**: $ Electric&lt;br&gt;
+**Fuel Economy**: 30 mpg&lt;br&gt;
+**0-60 Accel. Time**: 6 s
+
+]
+
+---
+
+## .center[Show options in a table with `kable()`]
+
+.leftcol[
+
+
+```r
+library(dplyr)
+
+alts &lt;- jsonlite::fromJSON(df_json) %&gt;%
+  # Add $ sign to price
+  mutate(price = scales::dollar(price)) %&gt;% 
+  # Make nicer attribute labels
+  select(
+    `Option:`             = altID, 
+    `Powertrain:`         = powertrain,
+    `Price:`              = price, 
+    `Fuel Economy (mpg):` = fuelEconomy, 
+    `Accel. Time (s):`    = accelTime)
+
+# Drop row names
+row.names(alts) &lt;- NULL
+```
+
+]
+
+.rightcol[
+
+Display the _transpose_, `t(alts)`
+
+
+```r
+kable(t(alts))
+```
+
+&lt;table&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Option: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Powertrain: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Gasoline &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Electric &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Price: &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $15 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; $20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Fuel Economy (mpg): &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 20 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Accel. Time (s): &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+
+---
+
+class: center 
+
+## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
+
+(code used in the related [blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
+
+&lt;center&gt;
+&lt;img src="images/formr4conjoint.png" width=870&gt;
+&lt;/center&gt;
+
+---
+
+# Your first few rows
+
+&lt;br&gt;
+
+### - Read `choice_questions.csv` from web
+### - Randomly choose a respondent ID
+### - Filter rows for that respondent ID
+### - Serialize the data frame to json format
+
+---
+
+### Using the `calculate` type ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919))
+
+.leftcol[
+
+RMarkdown
+
+
+```r
+# Read in the choice questions
+library(tidyverse)
+design &lt;- read_csv("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/choice_questions.csv")
+
+# Define the respondent ID
+respondentID &lt;- sample(design$respID, 1)
+
+# Create the subset of rows for that respondent ID
+df &lt;- design %&gt;%
+    filter(respID == respondentID) %&gt;%
+    mutate(image = paste0("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/", image))
+
+# Convert df to json
+df_json &lt;- jsonlite::toJSON(df)
+```
+
+]
+
+.rightcol[
+
+Google sheet
+
+&lt;center&gt;
+&lt;img src="images/calculate.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+## Random choice questions as **buttons** ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit?usp=sharing))
+
+Use the `mc_button` question type
+
+.leftcol[
+
+### `label`
+
+- Show your question text
+- Insert a code chunk to create one-row data frame for each alternative
+
+### `choice` columns
+
+- Insert RMarkdown code to display each alternative
+
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/cbc_buttons.png" width=100%&gt;
+&lt;/center&gt;
+
+]
+
+---
+
+## Random choice questions as **table** ([example sheet](https://docs.google.com/spreadsheets/d/1EG14Eh9kDBvE_iETfm6l6g90mrQ5sl_zbWaXkwIOGLU/edit?usp=sharing))
+
+- Use the `mc_button` question type
+
+.leftcol[
+### `label`
+
+- Show your question text
+- Insert a code chunk to modify `alts` data frame &amp; display it using `kable()`
+- Use [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Basic_HTML_table) to control table styling
+
+### `choice` columns
+
+- Simple text / number for each option
+
+]
+
+.rightcol[
+
+&lt;center&gt;
+&lt;img src="images/cbc_table.png" width=100%&gt;
+&lt;/center&gt;
+
+]
 
 ---
 
