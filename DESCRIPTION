@@ -1,5 +1,5 @@
 Type: Website
-Title: Slides
+Title: Open Source Conjoint Workshop
 Version: 1.0.0
 Authors@R: c(
     person(given   = "John",
@@ -13,5 +13,6 @@ Encoding: UTF-8
 Imports:
     knitr,
     markdown,
+    quarto,
     renderthis,
     rmarkdown
