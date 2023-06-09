@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Open Source Conjoint: Designing Conjoint Surveys with {cbcTools}</title>
+    <title>Designing Conjoint Surveys with {cbcTools}</title>
     <meta charset="utf-8" />
     <meta name="author" content="John Paul Helveston" />
     <meta name="date" content="2023-06-15" />
@@ -19,19 +19,18 @@
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="jhelvy/2023-qux-conf-conjoint"/>
-    <meta name="twitter:title" content="Open Source Conjoint: Designing Conjoint Surveys with {cbcTools}"/>
+    <meta name="twitter:title" content="Designing Conjoint Surveys with {cbcTools}"/>
     <meta name="twitter:url" content="https://jhelvy.github.io/2023-qux-conf-conjoint/"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@johnhelveston"/>
     <meta name="twitter:site" content="@johnhelveston"/>
-    <meta property="og:title" content="Open Source Conjoint: Designing Conjoint Surveys with {cbcTools}"/>
+    <meta property="og:title" content="Designing Conjoint Surveys with {cbcTools}"/>
     <meta property="og:url" content="https://jhelvy.github.io/2023-qux-conf-conjoint/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="John Paul Helveston"/>
     <link rel="stylesheet" href="css/lexis.css" type="text/css" />
     <link rel="stylesheet" href="css/lexis-fonts.css" type="text/css" />
-    <link rel="stylesheet" href="css/custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -44,6 +43,8 @@ layout: true
 ---
 
 class: middle, inverse
+
+## .center[Designing Conjoint Surveys with {cbcTools}]
 
 .leftcol40[
 
@@ -282,13 +283,13 @@ head(design)
 ```
 
 ```
-#&gt;   profileID respID qID altID obsID price type freshness
-#&gt; 1        49      1   1     1     1   4.0 Fuji Excellent
-#&gt; 2        12      1   1     2     1   3.0 Gala      Poor
-#&gt; 3         2      1   1     3     1   1.5 Fuji      Poor
-#&gt; 4        31      1   2     1     2   2.0 Gala   Average
-#&gt; 5        35      1   2     2     2   4.0 Gala   Average
-#&gt; 6         2      1   2     3     2   1.5 Fuji      Poor
+#&gt;   profileID respID qID altID obsID price       type freshness
+#&gt; 1        30      1   1     1     1   1.5       Gala   Average
+#&gt; 2        55      1   1     2     1   3.5       Gala Excellent
+#&gt; 3         6      1   1     3     1   3.5       Fuji      Poor
+#&gt; 4        43      1   2     1     2   1.0       Fuji Excellent
+#&gt; 5        22      1   2     2     2   1.0       Fuji   Average
+#&gt; 6        62      1   2     3     2   3.5 Honeycrisp Excellent
 ```
 
 ---
@@ -315,12 +316,12 @@ head(design)
 
 ```
 #&gt;   profileID respID qID altID obsID price type_Fuji type_Gala type_Honeycrisp freshness_Poor freshness_Average freshness_Excellent no_choice
-#&gt; 1        28      1   1     1     1   4.0         1         0               0              0                 1                   0         0
-#&gt; 2        39      1   1     2     1   2.5         0         0               1              0                 1                   0         0
-#&gt; 3        43      1   1     3     1   1.0         1         0               0              0                 0                   1         0
+#&gt; 1         9      1   1     1     1   1.5         0         1               0              1                 0                   0         0
+#&gt; 2         4      1   1     2     1   2.5         1         0               0              1                 0                   0         0
+#&gt; 3        18      1   1     3     1   2.5         0         0               1              1                 0                   0         0
 #&gt; 4         0      1   1     4     1   0.0         0         0               0              0                 0                   0         1
-#&gt; 5         2      1   2     1     2   1.5         1         0               0              1                 0                   0         0
-#&gt; 6        32      1   2     2     2   2.5         0         1               0              0                 1                   0         0
+#&gt; 5        48      1   2     1     2   3.5         1         0               0              0                 0                   1         0
+#&gt; 6        61      1   2     2     2   3.0         0         0               1              0                 0                   1         0
 ```
 
 ---
@@ -349,12 +350,12 @@ head(design)
 
 ```
 #&gt;   profileID respID qID altID obsID price       type freshness
-#&gt; 1         4      1   1     1     1   2.5       Fuji      Poor
-#&gt; 2        53      1   1     2     1   2.5       Gala Excellent
-#&gt; 3        40      1   1     3     1   3.0 Honeycrisp   Average
-#&gt; 4         2      1   2     1     2   1.5       Fuji      Poor
-#&gt; 5        52      1   2     2     2   2.0       Gala Excellent
-#&gt; 6        41      1   2     3     2   3.5 Honeycrisp   Average
+#&gt; 1         5      1   1     1     1   3.0       Fuji      Poor
+#&gt; 2         8      1   1     2     1   1.0       Gala      Poor
+#&gt; 3        15      1   1     3     1   1.0 Honeycrisp      Poor
+#&gt; 4        46      1   2     1     2   2.5       Fuji Excellent
+#&gt; 5        10      1   2     2     2   2.0       Gala      Poor
+#&gt; 6        61      1   2     3     2   3.0 Honeycrisp Excellent
 ```
 
 ---
@@ -400,12 +401,12 @@ head(design)
 
 ```
 #&gt;   respID qID altID obsID price       type freshness
-#&gt; 1      1   1     1     1   2.5       Fuji      Poor
-#&gt; 2      1   1     2     1   2.5       Gala Excellent
-#&gt; 3      1   1     3     1   3.0 Honeycrisp   Average
-#&gt; 4      1   2     1     2   1.5       Fuji      Poor
-#&gt; 5      1   2     2     2   2.0       Gala Excellent
-#&gt; 6      1   2     3     2   3.5 Honeycrisp   Average
+#&gt; 1      1   1     1     1   3.0       Fuji      Poor
+#&gt; 2      1   1     2     1   1.0       Gala      Poor
+#&gt; 3      1   1     3     1   1.0 Honeycrisp      Poor
+#&gt; 4      1   2     1     2   2.5       Fuji Excellent
+#&gt; 5      1   2     2     2   2.0       Gala      Poor
+#&gt; 6      1   2     3     2   3.0 Honeycrisp Excellent
 ```
 
 ---
@@ -528,12 +529,12 @@ head(data)
 
 ```
 #&gt;   profileID respID qID altID obsID price       type freshness choice
-#&gt; 1         4      1   1     1     1   2.5       Fuji      Poor      1
-#&gt; 2        53      1   1     2     1   2.5       Gala Excellent      0
-#&gt; 3        40      1   1     3     1   3.0 Honeycrisp   Average      0
-#&gt; 4         2      1   2     1     2   1.5       Fuji      Poor      0
-#&gt; 5        52      1   2     2     2   2.0       Gala Excellent      0
-#&gt; 6        41      1   2     3     2   3.5 Honeycrisp   Average      1
+#&gt; 1         5      1   1     1     1   3.0       Fuji      Poor      0
+#&gt; 2         8      1   1     2     1   1.0       Gala      Poor      0
+#&gt; 3        15      1   1     3     1   1.0 Honeycrisp      Poor      1
+#&gt; 4        46      1   2     1     2   2.5       Fuji Excellent      0
+#&gt; 5        10      1   2     2     2   2.0       Gala      Poor      1
+#&gt; 6        61      1   2     3     2   3.0 Honeycrisp Excellent      0
 ```
 
 ---
@@ -684,13 +685,13 @@ head(power)
 ```
 
 ```
-#&gt;   sampleSize               coef         est         se
-#&gt; 1         30              price  0.02212809 0.08970030
-#&gt; 2         30           typeGala -0.10817196 0.18993451
-#&gt; 3         30     typeHoneycrisp  0.14282766 0.17804323
-#&gt; 4         30   freshnessAverage -0.02789291 0.21400153
-#&gt; 5         30 freshnessExcellent -0.04331770 0.22415110
-#&gt; 6         60              price -0.05924017 0.06425106
+#&gt;   sampleSize               coef        est         se
+#&gt; 1         30              price -0.1825443 0.09722547
+#&gt; 2         30           typeGala -0.2555855 0.19836993
+#&gt; 3         30     typeHoneycrisp  0.1731836 0.17681242
+#&gt; 4         30   freshnessAverage  0.2992611 0.23409586
+#&gt; 5         30 freshnessExcellent -0.1063669 0.23383617
+#&gt; 6         60              price -0.1620378 0.06692915
 ```
 
 ]
@@ -703,13 +704,13 @@ tail(power)
 ```
 
 ```
-#&gt;    sampleSize               coef         est         se
-#&gt; 45        270 freshnessExcellent -0.33321094 0.07570743
-#&gt; 46        300              price -0.09760793 0.02918492
-#&gt; 47        300           typeGala  0.07566121 0.06014634
-#&gt; 48        300     typeHoneycrisp  0.22594827 0.05799997
-#&gt; 49        300   freshnessAverage  0.09092353 0.06967912
-#&gt; 50        300 freshnessExcellent -0.32240048 0.07216635
+#&gt;    sampleSize               coef          est         se
+#&gt; 45        270 freshnessExcellent -0.308050940 0.07680453
+#&gt; 46        300              price -0.115741172 0.02932219
+#&gt; 47        300           typeGala  0.086843858 0.06019082
+#&gt; 48        300     typeHoneycrisp  0.238283269 0.05804075
+#&gt; 49        300   freshnessAverage -0.002925931 0.07096659
+#&gt; 50        300 freshnessExcellent -0.302570936 0.07294199
 ```
 
 ]
