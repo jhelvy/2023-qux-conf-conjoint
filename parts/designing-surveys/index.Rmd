@@ -698,6 +698,21 @@ background-size: contain
 
 ---
 
+class: inverse 
+
+# Your turn
+
+- Download the practice zip file for this section.
+- Open the `designing-surveys.Rproj` file to open RStudio.
+- In RStudio, open the `practice.R` file.
+- Experiment with different design options, then examine the power:
+    - What if you modify the quesitons per respondent?
+    - What if you use a labeled design? 
+    - What if you include a "no choice" option?
+    - What if you use a Bayesian D-efficient design?
+    
+---
+
 class: inverse
 
 <br>
