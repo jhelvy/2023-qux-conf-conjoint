@@ -342,8 +342,53 @@ class: center
 
 ## .center[Experiment Design]
 
+<br>
+
+# .center[.font200[❌]]
+
+]
+
+.cols3[
+
+## .center[Online Surveys]
+
+<br>
+
+# .center[.font200[❌]]
+
+]
+
+.cols3[
+
+## .center[Model Estimation]
+
+R: 
+
+- {logitr}
+- {apollo}
+- {mlogit}
+- {gmnl}
+
+Stan
+
+]
+
+---
+
+class: center
+
+# **FOSS** for Choice-Based Conjoint Analysis
+
+.cols3[
+
+## .center[Experiment Design]
+
 <center>
-<img src="images/cbctools.png" width=250>
+<img src="images/cbctools.png" width=200>
+
+<br>
+
+by John Paul Helveston
 </center>
 
 ]
@@ -356,6 +401,11 @@ class: center
 
 ## .center[.font200[<span style="font-family: Roboto,Arial,sans-serif;"><span style="color: #8dc63f;">f</span>orm<span style="color: #8dc63f;">{`r}</span></span>]]
 
+<center>
+by Ruben C. Arslan and Cyril S. Tata
+<br><br>
+Conjoint adaptation by John Paul Helveston
+</center>
 ]
 
 .cols3[
@@ -363,7 +413,11 @@ class: center
 ## .center[Model Estimation]
 
 <center>
-<img src="images/logitr.png" width=250>
+<img src="images/logitr.png" width=200>
+
+<br>
+
+by John Paul Helveston
 </center>
 
 ]
