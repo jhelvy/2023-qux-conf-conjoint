@@ -202,7 +202,13 @@ class: middle, inverse
 
 ---
 
-# Strategy for building a survey in [formr](https://formr.org/)
+class: center, middle, inverse
+
+# Making a survey in formr
+
+---
+
+# Building a survey in [formr](https://formr.org/)
 
 <br>
 
@@ -218,21 +224,46 @@ class: middle, inverse
 
 class: center, middle
 
-# Start in RMarkdown
+# My Recommentation:<br>Draft your survey in RMarkdown
 
-## See `demoSurvey.Rmd`
+.cols3[
+
+### .center[Survey content in `demoSurvey.Rmd`]
+
+]
+
+.cols3[
+
+### .center[[Google sheet](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing)]
+
+]
+
+.cols3[
+
+### .center[[Live survey](https://demosurvey.formr.org/)]
+
+]
+
+---
+
+# .center[formr row types [(more here)](https://formr.org/documentation#available_items)]
+
+Type | Description
+-----|---------------------
+`note` | Display content in `label` column
+`submit` | Next page button
+`mc` | Multiple choice question (single choice)
+`mc_multiple` | Multiple choice question (multiple choices)
+`mc_button` | Multiple choice question (large buttons)
+`select_one` | Drop down menu (choose one)
+`text` | Open text, single row
+`textarea` | Open text, block
 
 ---
 
 # Some Guidelines
 
-- Use `---` to indicate new pages (this inserts a horizontal line)
-
---
-
 - Be sure that any data / images are hosted somewhere on the web
-
---
 
 - Consider each new page a **New R Session** (reload libraries, etc.)
 
@@ -278,26 +309,6 @@ This is the link to the **actual image**:
 
 https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true
 
----
-
-class: middle, center
-
-# [Demo survey](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing)
-
----
-
-# .center[formr row types [(more here)](https://formr.org/documentation#available_items)]
-
-Type | Description
------|---------------------
-`note` | Display content in `label` column
-`submit` | Next page button
-`mc` | Multiple choice question (single choice)
-`mc_multiple` | Multiple choice question (multiple choices)
-`mc_button` | Multiple choice question (large buttons)
-`select_one` | Drop down menu (choose one)
-`text` | Open text, single row
-`textarea` | Open text, block
 
 ---
 
@@ -319,7 +330,7 @@ Add "choice" columns
 
 Use `choices` tab<br>(when you have a lot of choices)
 
-Example: "Year of birth" in [randomImagesDemo](https://docs.google.com/spreadsheets/d/1hs551J6PYJNxc4sftmJyUqj6XYGYFVnN_5faQBWY7cs/edit?usp=sharing)
+Example: "Year of birth" in [this demo](https://docs.google.com/spreadsheets/d/13jSdlIDFRVsIHbiObgyZlPTGovIcB-xDQ0dkhL75fZQ/edit?usp=sharing)]
 
 ]
 
@@ -397,6 +408,22 @@ class: center, middle, inverse
 
 # Making a _conjoint_ survey in formr
 
+--
+
+# (Detailed demo in [this blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
+
+---
+
+class: center 
+
+## Full demo in the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
+
+(code used in the related [blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
+
+<center>
+<img src="images/formr4conjoint.png" width=870>
+</center>
+
 ---
 
 # 3 Parts
@@ -420,8 +447,11 @@ class: center, middle, inverse
 
 ---
 
-
 # .center[Displaying your choice questions online]
+
+.center[(See example in [part two](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919) demo google sheet)]
+
+<br>
 
 ### 1. Export your choice questions as a .csv file
 ### 2. Upload your .csv file somewhere (e.g. GitHub)
@@ -430,7 +460,7 @@ class: center, middle, inverse
 
 ---
 
-### 1. Export your choice questions as a .csv file
+### 1. Export your experiment design (from [{cbcTools}](https://github.com/jhelvy/cbcTools)) as a .csv file
 
 ```{r}
 #| eval: false
@@ -464,16 +494,7 @@ write_csv(design, here('choice_questions.csv'))
 
 ---
 
-## .center[Use R code to extract the values to display]
-
-### - Read `choice_questions.csv` from web
-### - Randomly choose a respondent ID
-### - Filter rows for that respondent ID
-### - Serialize the data frame to json format
-
----
-
-# .center[Side note on serializing a data frame]
+# .center[Serialize the experiment design]
 
 .center[Converts a data frame to one long string]
 
@@ -488,13 +509,77 @@ df
 ```
 
 ```{r}
-df_json <- jsonlite::toJSON(df)
+df_json <- jsonlite::serializeJSON(df)
 df_json
 ```
 
 ---
 
-# .center[Use RMarkdown to display the values]
+### Using the `calculate` type ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919))
+
+.leftcol[
+
+RMarkdown
+
+```{r, eval=FALSE}
+# Read in the choice questions
+library(tidyverse)
+design <- read_csv("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/choice_questions.csv")
+
+# Define the respondent ID
+respondentID <- sample(design$respID, 1)
+
+# Create the subset of rows for that respondent ID
+df <- design %>%
+    filter(respID == respondentID) %>%
+    mutate(image = paste0("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/", image))
+
+# Convert df to json
+df_json <- jsonlite::serializeJSON(df)
+```
+
+]
+
+.rightcol[
+
+Google sheet
+
+<center>
+<img src="images/calculate.png" width=100%>
+</center>
+
+]
+
+---
+
+## Random choice questions as **buttons** 
+
+Use the `mc_button` question type
+
+.leftcol[
+
+### `label`
+
+- Show your question text
+- Insert a code chunk to create one-row data frame for each alternative
+
+### `choice` columns
+
+- Insert RMarkdown code to display each alternative
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/cbc_buttons.png" width=100%>
+</center>
+
+]
+
+---
+
+## Random choice questions as **buttons** 
 
 .leftcol[
 
@@ -503,7 +588,7 @@ Create separate data frames for each alternative
 ```{r}
 library(dplyr)
 
-alts <- jsonlite::fromJSON(df_json)
+alts <- jsonlite::unserializeJSON(df_json)
 alt1 <- alts %>% filter(altID == 1)
 alt2 <- alts %>% filter(altID == 2)
 alt3 <- alts %>% filter(altID == 3)
@@ -539,14 +624,41 @@ Use RMarkdown formatting to display content in each alternative
 
 ---
 
-## .center[Show options in a table with `kable()`]
+## Random choice questions as **table** 
+
+- Use the `mc_button` question type
+
+.leftcol[
+### `label`
+
+- Show your question text
+- Insert a code chunk to modify `alts` data frame & display it using `kable()`
+- Use [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Basic_HTML_table) to control table styling
+
+### `choice` columns
+
+- Simple text / number for each option
+
+]
+
+.rightcol[
+
+<center>
+<img src="images/cbc_table.png" width=100%>
+</center>
+
+]
+
+---
+
+## Random choice questions as **table** 
 
 .leftcol[
 
 ```{r}
 library(dplyr)
 
-alts <- jsonlite::fromJSON(df_json) %>%
+alts <- jsonlite::unserializeJSON(df_json) %>% 
   # Add $ sign to price
   mutate(price = scales::dollar(price)) %>% 
   # Make nicer attribute labels
@@ -570,120 +682,6 @@ Display the _transpose_, `t(alts)`
 ```{r}
 kable(t(alts))
 ```
-
-]
-
----
-
-class: center 
-
-## Download the [formr4conjoint](https://github.com/jhelvy/formr4conjoint) repo from GitHub
-
-(code used in the related [blog post](https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/))
-
-<center>
-<img src="images/formr4conjoint.png" width=870>
-</center>
-
----
-
-# Your first few rows
-
-<br>
-
-### - Read `choice_questions.csv` from web
-### - Randomly choose a respondent ID
-### - Filter rows for that respondent ID
-### - Serialize the data frame to json format
-
----
-
-### Using the `calculate` type ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit#gid=1611481919))
-
-.leftcol[
-
-RMarkdown
-
-```{r, eval=FALSE}
-# Read in the choice questions
-library(tidyverse)
-design <- read_csv("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/choice_questions.csv")
-
-# Define the respondent ID
-respondentID <- sample(design$respID, 1)
-
-# Create the subset of rows for that respondent ID
-df <- design %>%
-    filter(respID == respondentID) %>%
-    mutate(image = paste0("https://raw.githubusercontent.com/jhelvy/formr4conjoint/master/survey/images/", image))
-
-# Convert df to json
-df_json <- jsonlite::toJSON(df)
-```
-
-]
-
-.rightcol[
-
-Google sheet
-
-<center>
-<img src="images/calculate.png" width=100%>
-</center>
-
-]
-
----
-
-## Random choice questions as **buttons** ([example sheet](https://docs.google.com/spreadsheets/d/1Ih3Pt6uz-gp5vc0SBxBzl4K0aZoRLwI6dtdtZiXSLz0/edit?usp=sharing))
-
-Use the `mc_button` question type
-
-.leftcol[
-
-### `label`
-
-- Show your question text
-- Insert a code chunk to create one-row data frame for each alternative
-
-### `choice` columns
-
-- Insert RMarkdown code to display each alternative
-
-]
-
-.rightcol[
-
-<center>
-<img src="images/cbc_buttons.png" width=100%>
-</center>
-
-]
-
----
-
-## Random choice questions as **table** ([example sheet](https://docs.google.com/spreadsheets/d/1EG14Eh9kDBvE_iETfm6l6g90mrQ5sl_zbWaXkwIOGLU/edit?usp=sharing))
-
-- Use the `mc_button` question type
-
-.leftcol[
-### `label`
-
-- Show your question text
-- Insert a code chunk to modify `alts` data frame & display it using `kable()`
-- Use [kableExtra](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Basic_HTML_table) to control table styling
-
-### `choice` columns
-
-- Simple text / number for each option
-
-]
-
-.rightcol[
-
-<center>
-<img src="images/cbc_table.png" width=100%>
-</center>
 
 ]
 

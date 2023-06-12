@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 # Welcome to our survey!
 
-For this survey, we will ask you about your preferences for different types of apples.
+This is a demo of a survey using https://formr.org/
 
 ---
 
@@ -43,7 +43,7 @@ Before we go on, please select which color you prefer between these two:
 
 Note that if you want to load some data or insert an image, these need to be available somewhere on the web. For example, here I'm reading in [this data](https://github.com/jhelvy/charts/blob/master/climateChangeBarcode/data/noaa_global_data.csv) from GitHub: 
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 url <- "https://raw.githubusercontent.com/emse-eda-gwu/2021-Spring/master/data/nasa_global_temps.csv"
 data <- read_csv(url)
@@ -51,7 +51,7 @@ data <- read_csv(url)
 
 Now I can use this data to do something, like make a chart:
 
-```{r, fig.width=5, fig.height=4, echo=FALSE}
+```{r, fig.width=5, fig.height=4, echo=FALSE, message=FALSE, warning=FALSE}
 data %>% 
   ggplot(aes(x = year, y = meanTemp)) +  
   geom_point() +
@@ -70,7 +70,7 @@ If I try to use the `data` object on this page, the survey will error.
 
 Instead, I'll need to read in the data again
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 url <- "https://raw.githubusercontent.com/emse-eda-gwu/2021-Spring/master/data/nasa_global_temps.csv"
 data <- read_csv(url)
@@ -83,8 +83,8 @@ The temperature anomaly in 2020 was `r data2020$meanTemp` degrees Celsius.
 
 ---
 
-Here's an image 
+Here's an image of a cute penguin :)
 
 <center>
-<img src="https://github.com/jhelvy/2023-qux-conf-conjoint/blob/main/images/logo.png?raw=true" width=300>
+<img src="https://p4a.seas.gwu.edu/2023-Spring/images/cute_penguin.gif" width=300>
 </center>
