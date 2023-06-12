@@ -37,14 +37,9 @@ jobs:
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
 
-      - name: Render Site
-        run: |
-          source("render.R")
-        shell: Rscript {0}
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
         with:
-          ACCESS_TOKEN: ${{ secrets.GH_PAT }}
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: . # The folder the action should deploy.
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
