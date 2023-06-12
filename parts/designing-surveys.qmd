@@ -2,22 +2,28 @@
 title: "Designing Surveys"
 ---
 
-```{r, echo=FALSE}
+```{r}
+#| echo: false
+
 part <- "designing-surveys"
 path_slides <- file.path(part, "index.html")
 path_pdf <- file.path(part, glue::glue("{part}.pdf"))
+path_notes <- file.path(part, glue::glue("{part}.zip"))
 ```
 
 ::: {.grid}
 
-::: {.g-col-6}
+::: {.g-col-3}
 
-**KEYBOARD SHORTCUTS FOR SLIDES:**
+**KEYBOARD SHORTCUTS**
 
-- Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides.
-- Use <kbd>f</kbd> to toggle full screen.
-- Use <kbd>o</kbd> to view an overview of all slides.
-- Use <kbd>h</kbd> to see a list of other shortcuts.
+- Slide navigation: <kbd>←</kbd> / <kbd>→</kbd>
+
+- Full screen: <kbd>f</kbd>
+
+- Slide overview: <kbd>o</kbd>
+
+- Shortcuts: <kbd>h</kbd>
 
 :::
 
@@ -42,6 +48,18 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 **RESOURCES**
 
 <a href="https://jhelvy.github.io/cbcTools/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+**PRACTICE**
+
+<a href=`r path_notes` class="btn-notes"><i class="fas fa-download"></i> Zip file</a>
 
 :::
 
