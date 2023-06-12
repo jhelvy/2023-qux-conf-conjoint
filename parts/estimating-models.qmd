@@ -49,6 +49,8 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 
 <a href="https://jhelvy.github.io/logitr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a>
 
+<a href="https://doi.org/10.18637/jss.v105.i10" class="btn-notes"><i class="fas fa-external-link-alt"></i> JSS Article</a>
+
 :::
 
 :::
