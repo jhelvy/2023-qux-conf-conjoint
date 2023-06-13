@@ -8,7 +8,6 @@ title: "Estimating Models"
 part <- "estimating-models"
 path_slides <- file.path(part, "index.html")
 path_pdf <- file.path(part, glue::glue("{part}.pdf"))
-path_notes <- file.path(part, glue::glue("{part}.zip"))
 ```
 
 ::: {.grid}
@@ -18,11 +17,8 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 **KEYBOARD SHORTCUTS**
 
 - Slide navigation: <kbd>←</kbd> / <kbd>→</kbd>
-
 - Full screen: <kbd>f</kbd>
-
 - Slide overview: <kbd>o</kbd>
-
 - Shortcuts: <kbd>h</kbd>
 
 :::
@@ -47,21 +43,9 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 
 **RESOURCES**
 
-<a href="https://jhelvy.github.io/logitr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a>
+<a href="https://jhelvy.github.io/logitr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> {logitr}</a>
 
 <a href="https://doi.org/10.18637/jss.v105.i10" class="btn-notes"><i class="fas fa-external-link-alt"></i> JSS Article</a>
-
-:::
-
-:::
-
-::: {.g-col-3}
-
-::: {.class-buttons}
-
-**PRACTICE**
-
-<a href=`r path_notes` class="btn-notes"><i class="fas fa-download"></i> Zip file</a>
 
 :::
 

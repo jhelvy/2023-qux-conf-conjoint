@@ -25,41 +25,48 @@
     "href": "index.html",
     "title": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R",
     "section": "",
-    "text": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R\nJohn Paul HelvestonJune 15, 2023George Washington University\n\n\n\n\n\nPart 1: Introduction\nIntroduction to an open source workflow for choice-based conjoint analysis:\n\nWhat is conjoint analysis?\nWhy \nHigh-level overview of open source workflow.\n\n\n\nPart 2: Designing surveys with {cbcTools}\nHow to use the {cbcTools} package to design and test choice-based conjoint surveys:\n\nDesign of experiment\nSimulating choices\nAssessing power\n\n\n\n\n\nPart 3: Estimating models with {logitr}\nHow to use the {logitr} package to estimate logit models on simulated data:\n\nMixed logit models\nWTP space models\n\n\n\nPart 4: Fielding surveys with formr\nHow to use the formr platform to field conjoint surveys online:\n\nUsing RMarkdown to design a survey\nImplementing a choice-based conjoint survey in formr"
+    "text": "Quant UX 2023 Workshop:An Open Source Framework forChoice Based Conjoint Experiments in R\nJohn Paul HelvestonJune 15, 2023George Washington University\n\n\n\n\nPart 1: Introduction\nIntroducing an open source workflow for conjoint analysis.\n\nWhat is conjoint analysis?\nWhy ?\nHigh-level overview of open source workflow.\n\n\n\nPart 2: Designing surveys\nUsing the {cbcTools} package to design and test conjoint surveys.\n\nDesign of experiment.\nSimulating choices.\nAssessing power.\n\n\n\n\n\nPart 3: Estimating models}\nUsing the {logitr} package to estimate logit models.\n\nMixed logit models.\nWTP space models.\n\n\n\nPart 4: Fielding surveys\nUsing the formr platform to field conjoint surveys online.\n\nUsing RMarkdown to design a survey.\nImplementing a choice-based conjoint survey in formr."
   },
   {
     "objectID": "parts/designing-surveys.html",
     "href": "parts/designing-surveys.html",
     "title": "Designing Surveys",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n Documentation\n\n\n\n\nPRACTICE\n Zip file"
+    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n {cbcTools}"
   },
   {
     "objectID": "parts/estimating-models.html",
     "href": "parts/estimating-models.html",
     "title": "Estimating Models",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n Documentation\n JSS Article\n\n\n\n\nPRACTICE\n Zip file"
+    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n {logitr}\n JSS Article"
   },
   {
     "objectID": "parts/fielding-surveys.html",
     "href": "parts/fielding-surveys.html",
     "title": "Fielding Surveys",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n formr4conjoint repo\n blog post\n formr.org\n\n\n\n\nPRACTICE\n Zip file"
+    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n formr4conjoint repo\n blog post\n\n\n\n\n\n formr.org"
   },
   {
     "objectID": "parts/introduction.html",
     "href": "parts/introduction.html",
     "title": "Introduction",
     "section": "",
-    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF\n\n\n\n\nRESOURCES\n Documentation"
+    "text": "KEYBOARD SHORTCUTS\n\nSlide navigation: ← / →\nFull screen: f\nSlide overview: o\nShortcuts: h\n\n\n\n\nSLIDES\n View slides\n Download PDF"
   },
   {
     "objectID": "software.html",
     "href": "software.html",
-    "title": "Software",
+    "title": "Workshop Software & Code",
     "section": "",
-    "text": "Software\n\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nOpen RStudio and run this code to install the packages we’ll be using:\n\n\ninstall.packages('logitr')\ninstall.packages('cbcTools')\n\n\nAs a backup, sign up for Posit Cloud (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\n\n\nFor reference, “Posit” is the company that makes “RStudio”, the software we’ll use to work with R.\n\nThat’s it - you’re all set!"
+    "text": "Download and unzip this code for the practice sessions.\nInstall the latest version of R and RStudio:\n\n\nDownload and install R (version 4.0.2 or higher)\nDownload and install RStudio (Desktop version)\n\n\nOpen RStudio and run this code to install the packages we’ll be using:\n\n\ninstall.packages('logitr')\ninstall.packages('cbcTools')\n\n\nAs a backup, sign up for Posit Cloud1 (the free version). It’s basically the same thing as RStudio, but accessible via a web browser. If things aren’t working on your computer, this is a great backup to quickly get back to working in RStudio.\n\nThat’s it - you’re all set!"
+  },
+  {
+    "objectID": "software.html#footnotes",
+    "href": "software.html#footnotes",
+    "title": "Workshop Software & Code",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n“Posit” is the company that makes “RStudio”, the software we’ll use to work with R.↩︎"
   }
 ]

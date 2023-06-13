@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
@@ -160,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../software.html" class="sidebar-item-text sidebar-link"><i class="bi bi-download" role="img">
 </i> 
- <span class="menu-text">Software</span></a>
+ <span class="menu-text">Software &amp; code</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -221,10 +220,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="g-col-3">
 <p><strong>KEYBOARD SHORTCUTS</strong></p>
 <ul>
-<li><p>Slide navigation: <kbd>←</kbd> / <kbd>→</kbd></p></li>
-<li><p>Full screen: <kbd>f</kbd></p></li>
-<li><p>Slide overview: <kbd>o</kbd></p></li>
-<li><p>Shortcuts: <kbd>h</kbd></p></li>
+<li>Slide navigation: <kbd>←</kbd> / <kbd>→</kbd></li>
+<li>Full screen: <kbd>f</kbd></li>
+<li>Slide overview: <kbd>o</kbd></li>
+<li>Shortcuts: <kbd>h</kbd></li>
 </ul>
 </div>
 <div class="g-col-3">
@@ -237,14 +236,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="g-col-3">
 <div class="class-buttons">
 <p><strong>RESOURCES</strong></p>
-<p><a href="https://jhelvy.github.io/logitr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a></p>
+<p><a href="https://jhelvy.github.io/logitr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> {logitr}</a></p>
 <p><a href="https://doi.org/10.18637/jss.v105.i10" class="btn-notes"><i class="fas fa-external-link-alt"></i> JSS Article</a></p>
-</div>
-</div>
-<div class="g-col-3">
-<div class="class-buttons">
-<p><strong>PRACTICE</strong></p>
-<p><a href="estimating-models/estimating-models.zip" class="btn-notes"><i class="fas fa-download"></i> Zip file</a></p>
 </div>
 </div>
 </div>
@@ -280,13 +273,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

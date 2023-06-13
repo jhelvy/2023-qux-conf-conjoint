@@ -33,7 +33,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -165,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./software.html" class="sidebar-item-text sidebar-link"><i class="bi bi-download" role="img">
 </i> 
- <span class="menu-text">Software</span></a>
+ <span class="menu-text">Software &amp; code</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -216,42 +215,41 @@ ul.task-list li input[type="checkbox"] {
 <p>John Paul Helveston<br>June 15, 2023<br>George Washington University</p>
 </section>
 </div>
-<hr>
 <div class="grid">
 <section id="part-1-introduction" class="level3 g-col-6">
-<h3 class="anchored" data-anchor-id="part-1-introduction">Part 1: <a href="./parts/introduction.html">Introduction</a></h3>
-<p>Introduction to an open source workflow for choice-based conjoint analysis:</p>
+<h3 data-anchor-id="part-1-introduction">Part 1: <a href="./parts/introduction.html">Introduction</a></h3>
+<p>Introducing an open source workflow for conjoint analysis.</p>
 <ol type="1">
 <li>What is conjoint analysis?</li>
-<li>Why </li>
+<li>Why ?</li>
 <li>High-level overview of open source workflow.</li>
 </ol>
 </section>
-<section id="part-2-designing-surveys-with-cbctools" class="level3 g-col-6">
-<h3 class="anchored" data-anchor-id="part-2-designing-surveys-with-cbctools">Part 2: <a href="./parts/designing-surveys.html">Designing surveys with {cbcTools}</a></h3>
-<p>How to use the <a href="https://github.com/jhelvy/cbcTools" target="_blank">{cbcTools}</a> package to design and test choice-based conjoint surveys:</p>
+<section id="part-2-designing-surveys" class="level3 g-col-6">
+<h3 data-anchor-id="part-2-designing-surveys">Part 2: <a href="./parts/designing-surveys.html">Designing surveys</a></h3>
+<p>Using the <a href="https://github.com/jhelvy/cbcTools" target="_blank">{cbcTools}</a> package to design and test conjoint surveys.</p>
 <ol type="1">
-<li>Design of experiment</li>
-<li>Simulating choices</li>
-<li>Assessing power</li>
+<li>Design of experiment.</li>
+<li>Simulating choices.</li>
+<li>Assessing power.</li>
 </ol>
 </section>
 </div>
 <div class="grid">
-<section id="part-3-estimating-models-with-logitr" class="level3 g-col-6">
-<h3 class="anchored" data-anchor-id="part-3-estimating-models-with-logitr">Part 3: <a href="./parts/estimating-models.html">Estimating models with {logitr}</a></h3>
-<p>How to use the <a href="https://github.com/jhelvy/logitr" target="_blank">{logitr}</a> package to estimate logit models on simulated data:</p>
+<section id="part-3-estimating-models" class="level3 g-col-6">
+<h3 data-anchor-id="part-3-estimating-models">Part 3: <a href="./parts/estimating-models.html">Estimating models}</a></h3>
+<p>Using the <a href="https://github.com/jhelvy/logitr" target="_blank">{logitr}</a> package to estimate logit models.</p>
 <ol type="1">
-<li>Mixed logit models</li>
-<li>WTP space models</li>
+<li>Mixed logit models.</li>
+<li>WTP space models.</li>
 </ol>
 </section>
-<section id="part-4-fielding-surveys-with-formr" class="level3 g-col-6">
-<h3 class="anchored" data-anchor-id="part-4-fielding-surveys-with-formr">Part 4: <a href="./parts/fielding-surveys.html">Fielding surveys with formr</a></h3>
-<p>How to use the <a href="https://formr.org/" target="_blank">formr</a> platform to field conjoint surveys online:</p>
+<section id="part-4-fielding-surveys" class="level3 g-col-6">
+<h3 data-anchor-id="part-4-fielding-surveys">Part 4: <a href="./parts/fielding-surveys.html">Fielding surveys</a></h3>
+<p>Using the <a href="https://formr.org/" target="_blank">formr</a> platform to field conjoint surveys online.</p>
 <ol type="1">
-<li>Using RMarkdown to design a survey</li>
-<li>Implementing a choice-based conjoint survey in formr</li>
+<li>Using RMarkdown to design a survey.</li>
+<li>Implementing a choice-based conjoint survey in formr.</li>
 </ol>
 </section>
 </div>
@@ -279,13 +277,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

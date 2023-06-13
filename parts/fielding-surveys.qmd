@@ -18,11 +18,8 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 **KEYBOARD SHORTCUTS**
 
 - Slide navigation: <kbd>←</kbd> / <kbd>→</kbd>
-
 - Full screen: <kbd>f</kbd>
-
 - Slide overview: <kbd>o</kbd>
-
 - Shortcuts: <kbd>h</kbd>
 
 :::
@@ -51,8 +48,6 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 
 <a href="https://www.jhelvy.com/posts/2021-09-18-choice-based-conjoint-surveys-in-r-with-formr/" class="btn-notes"><i class="fas fa-external-link-alt"></i> blog post</a>
 
-<a href="https://formr.org/" class="btn-notes"><i class="fas fa-external-link-alt"></i> formr.org</a>
-
 :::
 
 :::
@@ -61,9 +56,9 @@ path_notes <- file.path(part, glue::glue("{part}.zip"))
 
 ::: {.class-buttons}
 
-**PRACTICE**
+<br>
 
-<a href=`r path_notes` class="btn-notes"><i class="fas fa-download"></i> Zip file</a>
+<a href="https://formr.org/" class="btn-notes"><i class="fas fa-external-link-alt"></i> formr.org</a>
 
 :::
 
