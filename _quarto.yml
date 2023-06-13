@@ -47,7 +47,7 @@ website:
           - text: "4: Fielding Surveys"
             icon: globe
             href: parts/fielding-surveys.qmd
-      - text: Software
+      - text: Software & code
         icon: download
         href: software.qmd
       - text: About
@@ -70,7 +70,7 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    anchor-sections: true
+    anchor-sections: false
     smooth-scroll: true
     link-external-newwindow: true
     include-in-header: "_includes/header.html"

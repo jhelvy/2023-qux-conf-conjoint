@@ -17,11 +17,8 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 **KEYBOARD SHORTCUTS**
 
 - Slide navigation: <kbd>←</kbd> / <kbd>→</kbd>
-
 - Full screen: <kbd>f</kbd>
-
 - Slide overview: <kbd>o</kbd>
-
 - Shortcuts: <kbd>h</kbd>
 
 :::
@@ -41,14 +38,6 @@ path_pdf <- file.path(part, glue::glue("{part}.pdf"))
 :::
 
 ::: {.g-col-3}
-
-::: {.class-buttons}
-
-**RESOURCES**
-
-<a href="https://jhelvy.github.io/cbcTools/" class="btn-notes"><i class="fas fa-external-link-alt"></i> Documentation</a>
-
-:::
 
 :::
 

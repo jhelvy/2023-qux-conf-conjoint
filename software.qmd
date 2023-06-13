@@ -1,11 +1,13 @@
-# Software
+# Workshop Software & Code
 
-1. Install the latest version of R and RStudio:
+1. Download and unzip [this code](practice/2023-qux-conf-conjoint.zip) for the practice sessions.
+
+2. Install the latest version of R and RStudio:
 
 - [Download and install R](https://cloud.r-project.org) (version 4.0.2 or higher)
 - [Download and install RStudio](https://rstudio.com/products/rstudio/download/) (Desktop version)
 
-2. Open RStudio and run this code to install the packages we'll be using:
+3. Open RStudio and run this code to install the packages we'll be using:
 
 ```{r}
 #| eval: false
@@ -14,8 +16,6 @@ install.packages('logitr')
 install.packages('cbcTools')
 ```
 
-3. As a backup, sign up for [Posit Cloud](https://posit.cloud/plans/free) (the free version). It's basically the same thing as RStudio, but accessible via a web browser. If things aren't working on your computer, this is a great backup to quickly get back to working in RStudio.
-
-> For reference, "Posit" is the company that makes "RStudio", the software we'll use to work with R.
+4. As a backup, sign up for [Posit Cloud](https://posit.cloud/plans/free)^["Posit" is the company that makes "RStudio", the software we'll use to work with R.] (the free version). It's basically the same thing as RStudio, but accessible via a web browser. If things aren't working on your computer, this is a great backup to quickly get back to working in RStudio.
 
 That's it - you're all set!
