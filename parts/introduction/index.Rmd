@@ -1,8 +1,8 @@
 ---
-title: "Open Source Conjoint: Introduction"
+title: "Introduction to Open Source Conjoint"
 date: June 15, 2023
 author: "John Paul Helveston, Ph.D."
-institute: "Eng. Management & Systems Eng."
+institute: "The George Washington University | Dept. of Engineering Management and Systems Engineering"
 output:
   xaringan::moon_reader:
     css:
@@ -74,6 +74,8 @@ layout: true
 ---
 
 class: middle, inverse
+
+## .center[`r rmarkdown::metadata$title`]
 
 .leftcol40[
 
@@ -188,6 +190,20 @@ class: center, middle, inverse
 
 ---
 
+class: center
+
+## Directly asking people what they want isn't always helpful
+
+--
+
+### (People want everything)
+
+<center>
+<img src="images/the_homer.png" width=700>
+</center>
+
+---
+
 class: center, middle 
 
 ## Which feature do you care more about?
@@ -289,21 +305,122 @@ class: center
 
 ---
 
-background-image: url("images/software-closed.png")
-background-size: cover
+## .center[Choice-Based Conjoint Analysis Steps]
 
-## Choice-Based Conjoint **Software**
+<br>
+
+## 1. Design a survey (design of experiment)
+## 2. Implement it online
+## 3. (Collect data) <- not covering this today
+## 4. Estimate models 
 
 ---
 
-background-image: url("images/software-open.png")
-background-size: cover
+background-color: #fff
 
-## Choice-Based Conjoint **Software**
+### .center[**Software** for Choice-Based Conjoint Analysis]
 
+<center>
+<img src="images/software-table.png" width=900>
+</center>
 
+--
 
+- **.red[Licenses cost $$$]**
 
+--
+
+- **.red[Not reproducible]**
+
+---
+
+class: center
+
+# **FOSS** for Choice-Based Conjoint Analysis
+
+.cols3[
+
+## .center[Experiment Design]
+
+<br>
+
+# .center[.font200[❌]]
+
+]
+
+.cols3[
+
+## .center[Online Surveys]
+
+<br>
+
+# .center[.font200[❌]]
+
+]
+
+.cols3[
+
+## .center[Model Estimation]
+
+R: 
+
+- {logitr}
+- {apollo}
+- {mlogit}
+- {gmnl}
+
+Stan
+
+]
+
+---
+
+class: center
+
+# **FOSS** for Choice-Based Conjoint Analysis
+
+.cols3[
+
+## .center[Experiment Design]
+
+<center>
+<img src="images/cbctools.png" width=200>
+
+<br>
+
+by John Paul Helveston
+</center>
+
+]
+
+.cols3[
+
+## .center[Online Surveys]
+
+<br>
+
+## .center[.font200[<span style="font-family: Roboto,Arial,sans-serif;"><span style="color: #8dc63f;">f</span>orm<span style="color: #8dc63f;">{`r}</span></span>]]
+
+<center>
+by Ruben C. Arslan and Cyril S. Tata
+<br><br>
+Conjoint adaptation by John Paul Helveston
+</center>
+]
+
+.cols3[
+
+## .center[Model Estimation]
+
+<center>
+<img src="images/logitr.png" width=200>
+
+<br>
+
+by John Paul Helveston
+</center>
+
+]
 
 ---
 
@@ -311,7 +428,7 @@ class: inverse
 
 <br>
 
-### .center[Back to workshop website: https://jhelvy.github.io/2023-qux-conf-conjoint/]
+## .center[Back to workshop website:<br><br> https://jhelvy.github.io/2023-qux-conf-conjoint/]
 
 .footer-large[
 
