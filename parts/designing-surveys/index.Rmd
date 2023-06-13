@@ -702,9 +702,9 @@ class: inverse
 
 # Your turn
 
-- Download the practice zip file for this section.
-- Open the `designing-surveys.Rproj` file to open RStudio.
-- In RStudio, open the `practice.R` file.
+- Be sure to have downloaded and unzipped the [practice code](https://jhelvy.github.io/2023-qux-conf-conjoint/practice/2023-qux-conf-conjoint.zip).
+- Open the `2023-qux-conf-conjoint.Rproj` file to open RStudio.
+- In RStudio, open the `designing-surveys.R` file.
 - Experiment with different design options, then examine the power:
     - What if you modify the quesitons per respondent?
     - What if you use a labeled design? 
