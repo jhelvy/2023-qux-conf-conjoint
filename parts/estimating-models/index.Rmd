@@ -892,9 +892,9 @@ class: inverse
 
 # Your turn
 
-- Download the practice zip file for this section.
-- Open the `estimating-models.Rproj` file to open RStudio.
-- In RStudio, open the `practice.R` file.
+- Be sure to have downloaded and unzipped the [practice code](https://jhelvy.github.io/2023-qux-conf-conjoint/practice/2023-qux-conf-conjoint.zip).
+- Open the `2023-qux-conf-conjoint.Rproj` file to open RStudio.
+- In RStudio, open the `estimating-models.R` file.
 - Experiment with estimating different models (use either one of the example datasets included in the package, or simulate your own data!)
 
 ---
