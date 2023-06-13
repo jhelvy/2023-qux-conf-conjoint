@@ -104,6 +104,127 @@ class: middle, inverse
 
 ---
 
+# Many FOSS options model estimation
+
+R packages:
+
+- [{logitr}](https://github.com/jhelvy/logitr): Fastest, mixed logit, WTP space.
+- [{apollo}](http://www.apollochoicemodelling.com/): Most flexible, great documentation.
+- [{mlogit}](https://www.jstatsoft.org/article/view/v095i11): The OG R package.
+- [{gmnl}](https://www.jstatsoft.org/article/view/v079i02): Generalized logit model (though slow).
+- [{mixl}](https://github.com/joemolloy/fast-mixed-mnl): Good for big datasets (uses C for speed).
+
+Python packages:
+
+- [{xlogit}](https://xlogit.readthedocs.io/en/latest/): Basically Python version of {logitr}.
+
+[Stan](https://www.inwt-statistics.com/blog/understand-customer-decision-making-discrete-choice-models-with-rstan): For the Bayesians.
+
+---
+
+# Many FOSS options model estimation
+
+R packages:
+
+- [{logitr}](https://github.com/jhelvy/logitr): Fastest, mixed logit, WTP space. .red[<- I wrote this one, so I'm showcasing it!]
+- [{apollo}](http://www.apollochoicemodelling.com/): Most flexible, great documentation.
+- [{mlogit}](https://www.jstatsoft.org/article/view/v095i11): The OG R package.
+- [{gmnl}](https://www.jstatsoft.org/article/view/v079i02): Generalized logit model (though slow).
+- [{mixl}](https://github.com/joemolloy/fast-mixed-mnl): Good for big datasets (uses C for speed).
+
+Python packages:
+
+- [{xlogit}](https://xlogit.readthedocs.io/en/latest/): Basically Python version of {logitr}.
+
+[Stan](https://www.inwt-statistics.com/blog/understand-customer-decision-making-discrete-choice-models-with-rstan): For the Bayesians.
+
+---
+
+class: center
+background-color: #fff
+
+## {logitr} is fast!
+
+<center>
+<img src="https://jhelvy.github.io/logitr/articles/benchmark.png" width=750>
+</center>
+
+---
+
+class: center
+
+## {logitr} supports two common forms of utility models
+
+.leftcol[
+
+## Preference Space
+
+<center>
+<img src="images/utilityPreference2.png" width=500>
+</center>
+
+]
+
+.rightcol[
+
+## WTP Space
+
+<center>
+<img src="images/utilityWtp2.png" width=520>
+</center>
+
+]
+
+---
+
+## .center[{logitr} has a similar UI with {cbcTools}]
+
+.center[({cbcTools} uses {logitr} to simulate choices and assess power)]
+
+.leftcol[
+
+## .center[{cbcTools}]
+
+```{r}
+#| eval: false
+
+power <- cbc_power(
+    nbreaks = 10,
+    n_q     = 6,
+    data    = data,
+    obsID   = "obsID",
+    outcome = "choice",
+    pars    = c("price", "type", "freshness")
+)
+```
+
+]
+
+.rightcol[
+
+## .center[{logitr}]
+
+```{r}
+#| eval: false
+
+model <- logitr(
+    data    = data,
+    obsID   = "obsID",
+    outcome = "choice",
+    pars    = c("price", "type", "freshness")
+)
+```
+
+]
+
+---
+
+class: inverse, middle, center
+
+# Utility model refresher
+
+---
+
 class: center
 
 # Which would you choose?
@@ -155,7 +276,7 @@ class: center
 </br>
 
 <center>
-<img src="images/utilityPreference.png" width="800">
+<img src="images/utilityPreference.png" width="1000">
 </center>
 
 --
@@ -713,42 +834,6 @@ class: center, middle, inverse
 
 ---
 
-## .center[`wtp()`: Compute WTP from Preference Space model]
-
-</br>
-
-.leftcol30[
-
-<center>
-<img src="images/wtpHatComputed.png" width=300>
-</center>
-
-]
-
-.rightcol65[
-
-```{r}
-wtp(mnl_pref, scalePar = "price")
-```
-
-]
-
----
-
-### .center[`wtpCompare()`: Compare WTP from Preference & WTP space models]
-
-</br>
-
-.leftcol70[
-
-```{r}
-wtpCompare(mnl_pref, mnl_wtp, scalePar = "price")
-```
-
-]
-
----
-
 ### .center[`predict()`: Expected shares for a set of alternatives]
 
 </br>
@@ -788,7 +873,7 @@ data
 
 .rightcol[
 
-Compute expected shares
+Predict probabilities
 
 ```{r}
 predict(
@@ -800,6 +885,17 @@ predict(
 ```
 
 ]
+
+---
+
+class: inverse
+
+# Your turn
+
+- Download the practice zip file for this section.
+- Open the `estimating-models.Rproj` file to open RStudio.
+- In RStudio, open the `practice.R` file.
+- Experiment with estimating different models (use either one of the example datasets included in the package, or simulate your own data!)
 
 ---
 
