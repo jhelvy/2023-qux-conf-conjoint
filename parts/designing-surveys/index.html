@@ -96,6 +96,26 @@ class: center
 
 ---
 
+# Many R packages for design of experiment
+
+- [{cbcTools}](https://github.com/jhelvy/cbcTools)
+- [{ExpertChoice}](https://github.com/JedStephens/ExpertChoice)
+- [{support.CEs}](https://www.jstatsoft.org/article/view/v050c02)
+- [{idefix}](https://www.jstatsoft.org/article/view/v096i03)
+- [{choiceDes}](https://cran.r-project.org/web/packages/choiceDes/index.html)
+
+---
+
+# Many R packages for design of experiment
+
+- [{cbcTools}](https://github.com/jhelvy/cbcTools) .red[&lt;-- Does a lot more than just DOE!]
+- [{ExpertChoice}](https://github.com/JedStephens/ExpertChoice)
+- [{support.CEs}](https://www.jstatsoft.org/article/view/v050c02)
+- [{idefix}](https://www.jstatsoft.org/article/view/v096i03)
+- [{choiceDes}](https://cran.r-project.org/web/packages/choiceDes/index.html)
+
+---
+
 class: middle, center, inverse 
 
 ## .center[A systematic workflow for designing a CBC experiment]
@@ -284,12 +304,12 @@ head(design)
 
 ```
 #&gt;   profileID respID qID altID obsID price       type freshness
-#&gt; 1        49      1   1     1     1   4.0       Fuji Excellent
-#&gt; 2        16      1   1     2     1   1.5 Honeycrisp      Poor
-#&gt; 3        18      1   1     3     1   2.5 Honeycrisp      Poor
-#&gt; 4         4      1   2     1     2   2.5       Fuji      Poor
-#&gt; 5        55      1   2     2     2   3.5       Gala Excellent
-#&gt; 6         2      1   2     3     2   1.5       Fuji      Poor
+#&gt; 1        55      1   1     1     1   3.5       Gala Excellent
+#&gt; 2        15      1   1     2     1   1.0 Honeycrisp      Poor
+#&gt; 3        16      1   1     3     1   1.5 Honeycrisp      Poor
+#&gt; 4         6      1   2     1     2   3.5       Fuji      Poor
+#&gt; 5        35      1   2     2     2   4.0       Gala   Average
+#&gt; 6        57      1   2     3     2   1.0 Honeycrisp Excellent
 ```
 
 ---
@@ -316,12 +336,12 @@ head(design)
 
 ```
 #&gt;   profileID respID qID altID obsID price type_Fuji type_Gala type_Honeycrisp freshness_Poor freshness_Average freshness_Excellent no_choice
-#&gt; 1        15      1   1     1     1   1.0         0         0               1              1                 0                   0         0
-#&gt; 2        27      1   1     2     1   3.5         1         0               0              0                 1                   0         0
-#&gt; 3        10      1   1     3     1   2.0         0         1               0              1                 0                   0         0
+#&gt; 1        33      1   1     1     1   3.0         0         1               0              0                 1                   0         0
+#&gt; 2        62      1   1     2     1   3.5         0         0               1              0                 0                   1         0
+#&gt; 3        48      1   1     3     1   3.5         1         0               0              0                 0                   1         0
 #&gt; 4         0      1   1     4     1   0.0         0         0               0              0                 0                   0         1
 #&gt; 5        15      1   2     1     2   1.0         0         0               1              1                 0                   0         0
-#&gt; 6        36      1   2     2     2   1.0         0         0               1              0                 1                   0         0
+#&gt; 6        23      1   2     2     2   1.5         1         0               0              0                 1                   0         0
 ```
 
 ---
@@ -350,12 +370,12 @@ head(design)
 
 ```
 #&gt;   profileID respID qID altID obsID price       type freshness
-#&gt; 1        44      1   1     1     1   1.5       Fuji Excellent
-#&gt; 2        33      1   1     2     1   3.0       Gala   Average
-#&gt; 3        37      1   1     3     1   1.5 Honeycrisp   Average
-#&gt; 4        26      1   2     1     2   3.0       Fuji   Average
-#&gt; 5        31      1   2     2     2   2.0       Gala   Average
-#&gt; 6        59      1   2     3     2   2.0 Honeycrisp Excellent
+#&gt; 1        26      1   1     1     1     3       Fuji   Average
+#&gt; 2        31      1   1     2     1     2       Gala   Average
+#&gt; 3        19      1   1     3     1     3 Honeycrisp      Poor
+#&gt; 4         1      1   2     1     2     1       Fuji      Poor
+#&gt; 5         8      1   2     2     2     1       Gala      Poor
+#&gt; 6        57      1   2     3     2     1 Honeycrisp Excellent
 ```
 
 ---
@@ -401,12 +421,12 @@ head(design)
 
 ```
 #&gt;   respID qID altID obsID price       type freshness
-#&gt; 1      1   1     1     1   1.5       Fuji Excellent
-#&gt; 2      1   1     2     1   3.0       Gala   Average
-#&gt; 3      1   1     3     1   1.5 Honeycrisp   Average
-#&gt; 4      1   2     1     2   3.0       Fuji   Average
-#&gt; 5      1   2     2     2   2.0       Gala   Average
-#&gt; 6      1   2     3     2   2.0 Honeycrisp Excellent
+#&gt; 1      1   1     1     1     3       Fuji   Average
+#&gt; 2      1   1     2     1     2       Gala   Average
+#&gt; 3      1   1     3     1     3 Honeycrisp      Poor
+#&gt; 4      1   2     1     2     1       Fuji      Poor
+#&gt; 5      1   2     2     2     1       Gala      Poor
+#&gt; 6      1   2     3     2     1 Honeycrisp Excellent
 ```
 
 ---
@@ -529,12 +549,12 @@ head(data)
 
 ```
 #&gt;   profileID respID qID altID obsID price       type freshness choice
-#&gt; 1        44      1   1     1     1   1.5       Fuji Excellent      0
-#&gt; 2        33      1   1     2     1   3.0       Gala   Average      0
-#&gt; 3        37      1   1     3     1   1.5 Honeycrisp   Average      1
-#&gt; 4        26      1   2     1     2   3.0       Fuji   Average      0
-#&gt; 5        31      1   2     2     2   2.0       Gala   Average      1
-#&gt; 6        59      1   2     3     2   2.0 Honeycrisp Excellent      0
+#&gt; 1        26      1   1     1     1     3       Fuji   Average      0
+#&gt; 2        31      1   1     2     1     2       Gala   Average      1
+#&gt; 3        19      1   1     3     1     3 Honeycrisp      Poor      0
+#&gt; 4         1      1   2     1     2     1       Fuji      Poor      0
+#&gt; 5         8      1   2     2     2     1       Gala      Poor      0
+#&gt; 6        57      1   2     3     2     1 Honeycrisp Excellent      1
 ```
 
 ---
@@ -685,13 +705,13 @@ head(power)
 ```
 
 ```
-#&gt;   sampleSize               coef          est         se
-#&gt; 1         30              price -0.323720273 0.09703566
-#&gt; 2         30           typeGala -0.006998948 0.19692109
-#&gt; 3         30     typeHoneycrisp  0.310095155 0.18477278
-#&gt; 4         30   freshnessAverage  0.176627903 0.23789479
-#&gt; 5         30 freshnessExcellent -0.189772841 0.24507782
-#&gt; 6         60              price -0.210818382 0.06596601
+#&gt;   sampleSize               coef        est         se
+#&gt; 1         30              price -0.0395841 0.09664295
+#&gt; 2         30           typeGala  0.3198033 0.18958184
+#&gt; 3         30     typeHoneycrisp  0.1728158 0.19532138
+#&gt; 4         30   freshnessAverage  0.6564963 0.22311590
+#&gt; 5         30 freshnessExcellent -0.1699275 0.24271214
+#&gt; 6         60              price -0.1187266 0.06587854
 ```
 
 ]
@@ -704,13 +724,13 @@ tail(power)
 ```
 
 ```
-#&gt;    sampleSize               coef         est         se
-#&gt; 45        270 freshnessExcellent -0.21393084 0.07636678
-#&gt; 46        300              price -0.11318500 0.02926127
-#&gt; 47        300           typeGala  0.13458492 0.05885936
-#&gt; 48        300     typeHoneycrisp  0.15370569 0.05876901
-#&gt; 49        300   freshnessAverage  0.08786836 0.07127721
-#&gt; 50        300 freshnessExcellent -0.17724236 0.07268666
+#&gt;    sampleSize               coef        est         se
+#&gt; 45        270 freshnessExcellent -0.1221717 0.07561697
+#&gt; 46        300              price -0.1388063 0.02949868
+#&gt; 47        300           typeGala  0.1638605 0.06015893
+#&gt; 48        300     typeHoneycrisp  0.2682089 0.05873098
+#&gt; 49        300   freshnessAverage  0.1894352 0.06988738
+#&gt; 50        300 freshnessExcellent -0.1025510 0.07192388
 ```
 
 ]

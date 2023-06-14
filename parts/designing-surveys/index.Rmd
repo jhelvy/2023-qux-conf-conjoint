@@ -127,6 +127,26 @@ class: center
 
 ---
 
+# Many R packages for design of experiment
+
+- [{cbcTools}](https://github.com/jhelvy/cbcTools)
+- [{ExpertChoice}](https://github.com/JedStephens/ExpertChoice)
+- [{support.CEs}](https://www.jstatsoft.org/article/view/v050c02)
+- [{idefix}](https://www.jstatsoft.org/article/view/v096i03)
+- [{choiceDes}](https://cran.r-project.org/web/packages/choiceDes/index.html)
+
+---
+
+# Many R packages for design of experiment
+
+- [{cbcTools}](https://github.com/jhelvy/cbcTools) .red[<-- Does a lot more than just DOE!]
+- [{ExpertChoice}](https://github.com/JedStephens/ExpertChoice)
+- [{support.CEs}](https://www.jstatsoft.org/article/view/v050c02)
+- [{idefix}](https://www.jstatsoft.org/article/view/v096i03)
+- [{choiceDes}](https://cran.r-project.org/web/packages/choiceDes/index.html)
+
+---
+
 class: middle, center, inverse 
 
 ## .center[A systematic workflow for designing a CBC experiment]
