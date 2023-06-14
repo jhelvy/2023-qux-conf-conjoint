@@ -342,9 +342,13 @@ class: center
 
 ## .center[Experiment Design]
 
-<br>
+R: 
 
-# .center[.font200[❌]]
+- {cbcTools}
+- {ExpertChoice}
+- {support.CEs}
+- {idefix}
+- {choiceDes}
 
 ]
 
@@ -352,9 +356,9 @@ class: center
 
 ## .center[Online Surveys]
 
-<br>
+R: 
 
-# .center[.font200[❌]]
+- formr
 
 ]
 
@@ -362,14 +366,18 @@ class: center
 
 ## .center[Model Estimation]
 
-R: 
+R:
 
 - {logitr}
 - {apollo}
 - {mlogit}
 - {gmnl}
+- {mixl}
 
-Stan
+Other:
+
+- Python: {xlogit}
+- Stan
 
 ]
 
