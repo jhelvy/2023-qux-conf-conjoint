@@ -720,6 +720,19 @@ background-size: contain
 
 class: inverse 
 
+```{r}
+#| echo: false
+
+countdown::countdown(
+  minutes      = 10,
+  warn_when    = 30,
+  update_every = 1,
+  top          = 0,
+  right        = 0,
+  font_size    = '2em'
+)
+```
+
 # Your turn
 
 - Be sure to have downloaded and unzipped the [practice code](https://jhelvy.github.io/2023-qux-conf-conjoint/practice/2023-qux-conf-conjoint.zip).
