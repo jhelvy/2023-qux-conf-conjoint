@@ -21,3 +21,16 @@
 
 # Render site
 quarto::quarto_render()
+
+# Merge slide pdfs into single file
+
+pdfs <- c(
+    file.path("parts", "introduction", "introduction.pdf"),
+    file.path("parts", "designing-surveys", "designing-surveys.pdf"),
+    file.path("parts", "estimating-models", "estimating-models.pdf"),
+    file.path("parts", "fielding-surveys", "fielding-surveys.pdf")
+)
+pdftools::pdf_combine(
+    input = pdfs,
+    output = file.path('parts', '2023-qux-conf-conjoint.pdf')
+)

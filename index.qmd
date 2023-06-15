@@ -17,6 +17,48 @@ John Paul Helveston<br>June 15, 2023<br>George Washington University
 
 :::
 
+<hr>
+
+<center>
+
+### Downloads
+
+</center>
+
+::: {.grid}
+
+::: {.g-col-3}
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+<a href="parts/2023-qux-conf-conjoint.pdf" class="btn-notes"><i class="fas fa-file-pdf"></i> All slides</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+::: {.class-buttons}
+
+<a href="/software.html" class="btn-notes"><i class="fa fa-download"></i> Software</a>
+
+:::
+
+:::
+
+::: {.g-col-3}
+
+:::
+
+:::
+
+<hr>
+
 ::: {.grid}
 
 ::: {.g-col-6}
